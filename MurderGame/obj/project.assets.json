@@ -3052,7 +3052,10 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "MurderGame.Business >= 1.0.0"
+      "MurderGame.Business >= 1.0.0",
+      "MurderGame.DataAccess >= 1.0.0",
+      "MurderGame.Dtos >= 1.0.0",
+      "MurderGame.Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3090,6 +3093,15 @@
           "projectReferences": {
             "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame.Business\\MurderGame.Business.csproj": {
               "projectPath": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame.Business\\MurderGame.Business.csproj"
+            },
+            "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame.DataAccess\\MurderGame.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame.DataAccess\\MurderGame.DataAccess.csproj"
+            },
+            "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame.Dtos\\MurderGame.Dtos.csproj": {
+              "projectPath": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame.Dtos\\MurderGame.Dtos.csproj"
+            },
+            "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame.Entities\\MurderGame.Entities.csproj": {
+              "projectPath": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame.Entities\\MurderGame.Entities.csproj"
             }
           }
         }

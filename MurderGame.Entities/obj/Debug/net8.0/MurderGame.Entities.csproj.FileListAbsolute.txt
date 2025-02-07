@@ -1,0 +1,15 @@
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\bin\Debug\net8.0\MurderGame.Entities.deps.json
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\bin\Debug\net8.0\MurderGame.Entities.runtimeconfig.json
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\bin\Debug\net8.0\MurderGame.Entities.dll
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\bin\Debug\net8.0\MurderGame.Entities.pdb
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\MurderGame.Entities.csproj.AssemblyReference.cache
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\MurderGame.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\MurderGame.Entities.AssemblyInfoInputs.cache
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\MurderGame.Entities.AssemblyInfo.cs
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\MurderGame.Entities.csproj.CoreCompileInputs.cache
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\MurderGame.Entities.sourcelink.json
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\MurderGame.Entities.dll
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\refint\MurderGame.Entities.dll
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\MurderGame.Entities.pdb
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\MurderGame.Entities.genruntimeconfig.cache
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Entities\obj\Debug\net8.0\ref\MurderGame.Entities.dll

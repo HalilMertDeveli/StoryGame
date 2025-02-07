@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using MurderGame.Entities.Domains.MurderGame.Entities.Domains;
 
 namespace MurderGame.Entities.Domains
 {
@@ -18,7 +19,7 @@ namespace MurderGame.Entities.Domains
         public DateTime? LastLoginDate { get; set; }
 
         // Navigation Properties
-        public ICollection<ApplicationUserProfileDetails> Messages { get; set; } = new List<ApplicationUserProfileDetails>();
+        public ICollection<ApplicationUserMessage> Messages { get; set; } = new List<ApplicationUserMessage>(); // ✅ HATA DÜZELTİLDİ
         public ApplicationUserProfileDetails ApplicationUserProfileDetails { get; set; }
     }
 }

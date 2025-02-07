@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 
 namespace MurderGame.Entities.Domains
 {
-    public class ApplicationUserProfileDetails
+    namespace MurderGame.Entities.Domains
     {
-        public int ProfileDetailsId { get; set; }
-        public int UserId { get; set; }
+        public class ApplicationUserProfileDetails
+        {
+            public int ProfileDetailsId { get; set; } // Primary Key
+            public int UserId { get; set; } // Foreign Key
 
-        public string? DisplayName { get; set; }
-        public string? ProfilePicture { get; set; }
-        public string? Bio { get; set; }
+            public string? DisplayName { get; set; }
+            public string? ProfilePicture { get; set; }
+            public string? Bio { get; set; }
+            public DateTime DateOfBirth { get; set; }
+            public string? Location { get; set; }
+            public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+            public DateTime? UpdatedAt { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
-        public string? Location { get; set; }
-
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdatedAt { get; set; }
-
-        // Navigation Property
-        public ApplicationUser ApplicationUser { get; set; }
+            // Navigation Property
+            public ApplicationUser ApplicationUser { get; set; } 
+        }
     }
+
 }

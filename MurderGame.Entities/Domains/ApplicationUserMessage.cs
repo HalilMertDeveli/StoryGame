@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace MurderGame.Entities.Domains
 {
-    public class ApplicationUserMessage
+    namespace MurderGame.Entities.Domains
     {
-        public int MessageId { get; set; }
-        public int SenderId { get; set; } // Identity ile User'ın int Id'si
+        public class ApplicationUserMessage
+        {
+            public int MessageId { get; set; } // Primary Key
+            public int SenderId { get; set; } // Foreign Key
 
-        public string Content { get; set; }
-        public DateTime SentAt { get; set; } = DateTime.UtcNow;
-        public bool IsRead { get; set; } = false;
+            public string Content { get; set; }
+            public DateTime SentAt { get; set; } = DateTime.UtcNow;
+            public bool IsRead { get; set; } = false;
 
-        // Navigation Property
-        public ApplicationUser Sender { get; set; }
+            // Navigation Property
+            public ApplicationUser Sender { get; set; } // ✅ Kullanıcı ile 1-N ilişki
+        }
     }
+
 }
