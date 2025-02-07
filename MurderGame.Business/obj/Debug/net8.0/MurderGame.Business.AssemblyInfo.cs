@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MurderGame.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+366f46d44c819c2018c0a53f5da522a9b176f880")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03577969f178cdae8ecd6a7703d89239ace35015")]
 [assembly: System.Reflection.AssemblyProductAttribute("MurderGame.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MurderGame.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

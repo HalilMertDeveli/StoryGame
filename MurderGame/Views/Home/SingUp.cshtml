@@ -9,62 +9,70 @@
     <section>
         <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
             <div class="container">
-
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
-                            <form>
-                                <!-- 2 sütunlu giriş alanları (Ad ve Soyad) -->
+                            <form method="post" enctype="multipart/form-data">
+                                <!-- Ad ve Soyad -->
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
-                                        <div data-mdb-input-init class="form-outline">
-                                            <input type="text" id="form3Example1" class="form-control" />
-                                            <label class="form-label" for="form3Example1">Ad</label>
+                                        <div class="form-outline">
+                                            <input type="text" id="firstName" name="FirstName" class="form-control" required />
+                                            <label class="form-label" for="firstName">Ad</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
-                                        <div data-mdb-input-init class="form-outline">
-                                            <input type="text" id="form3Example2" class="form-control" />
-                                            <label class="form-label" for="form3Example2">Soyad</label>
+                                        <div class="form-outline">
+                                            <input type="text" id="lastName" name="LastName" class="form-control" required />
+                                            <label class="form-label" for="lastName">Soyad</label>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- E-posta girişi -->
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="email" id="form3Example3" class="form-control" />
-                                    <label class="form-label" for="form3Example3">E-posta adresi</label>
+                                <!-- Kullanıcı Adı -->
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="userNickName" name="UserNickName" class="form-control" required />
+                                    <label class="form-label" for="userNickName">Kullanıcı Adı</label>
                                 </div>
 
-                                <!-- Şifre girişi -->
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="password" id="form3Example4" class="form-control" />
-                                    <label class="form-label" for="form3Example4">Şifre</label>
+                                <!-- E-posta -->
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="email" name="Email" class="form-control" required />
+                                    <label class="form-label" for="email">E-posta adresi</label>
                                 </div>
 
-                                <!-- Kayıt ol butonu -->
-                                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+                                <!-- Şifre -->
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="password" name="Password" class="form-control" required />
+                                    <label class="form-label" for="password">Şifre</label>
+                                </div>
+
+                                <!-- Profil Fotoğrafı (Opsiyonel) -->
+                                <div class="form-outline mb-4">
+                                    <input type="file" id="profilePicture" name="ProfilePicture" class="form-control" />
+                                    <label class="form-label" for="profilePicture">Profil Resmi (Opsiyonel)</label>
+                                </div>
+
+                                <!-- Kayıt Ol Butonu -->
+                                <button type="submit" class="btn btn-primary btn-block mb-4">
                                     Kayıt Ol
                                 </button>
-                                <p>E-posta adresi ile giriş yapınız<a asp-action="Login" asp-controller="Home" class="link-info"> Kayıtlı hesaıbınız ile giriş yapınız</a></p>
 
+                                <p>Zaten hesabınız var mı? <a asp-action="Login" asp-controller="Home" class="link-info">Giriş Yap</a></p>
 
-                                <!-- Alternatif kayıt seçenekleri -->
+                                <!-- Alternatif Kayıt Seçenekleri -->
                                 <div class="text-center">
-                                    <p>veya aşağıdakilerle kayıt olun:</p>
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                                    <p>Veya aşağıdakilerle kayıt olun:</p>
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
                                         <i class="fab fa-facebook-f"></i>
                                     </button>
-
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
                                         <i class="fab fa-google"></i>
                                     </button>
-
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
                                         <i class="fab fa-twitter"></i>
                                     </button>
-
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
                                         <i class="fab fa-github"></i>
                                     </button>
                                 </div>

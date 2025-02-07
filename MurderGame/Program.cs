@@ -1,3 +1,5 @@
+using MurderGame.Business.DependencyResolvers.Microsoft;
+
 namespace MurderGame
 {
     public class Program
@@ -8,6 +10,7 @@ namespace MurderGame
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDependencies();
 
             var app = builder.Build();
 

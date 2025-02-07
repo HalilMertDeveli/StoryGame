@@ -5,53 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
-
-   
 </head>
 <body>
+    <section class="vh-100">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 text-black">
+                    <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+                        <form method="post" action="/Account/Login" style="width: 23rem;">
 
-</body>
+                            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Giriş Yap</h3>
 
-<section class="vh-100">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 text-black">
+                            <!-- Kullanıcı Adı veya E-Posta -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="loginIdentifier" name="LoginIdentifier" class="form-control form-control-lg" required />
+                                <label class="form-label" for="loginIdentifier">E-Posta veya Kullanıcı Adı</label>
+                            </div>
 
+                            <!-- Şifre -->
+                            <div class="form-outline mb-4">
+                                <input type="password" id="password" name="Password" class="form-control form-control-lg" required />
+                                <label class="form-label" for="password">Şifre</label>
+                            </div>
 
+                            <!-- Beni Hatırla -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="rememberMe" name="RememberMe">
+                                <label class="form-check-label" for="rememberMe">Beni Hatırla</label>
+                            </div>
 
-                <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+                            <!-- Giriş Butonu -->
+                            <div class="pt-1 mb-4">
+                                <button type="submit" class="btn btn-info btn-lg btn-block">Giriş Yap</button>
+                            </div>
 
-                    <form style="width: 23rem;">
+                            <!-- Şifremi Unuttum -->
+                            <p class="small mb-3 pb-lg-2">
+                                <a class="text-muted" href="/Account/ForgotPassword">Şifreni mi unuttun?</a>
+                            </p>
 
-                        <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Giriş yap</h3>
+                            <!-- Alternatif giriş seçenekleri -->
+                            <div class="text-center">
+                                <p>veya aşağıdakilerle giriş yap:</p>
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
 
-                        <div data-mdb-input-init class="form-outline mb-4">
-                            <input type="email" id="form2Example18" class="form-control form-control-lg" />
-                            <label class="form-label" for="form2Example18">Email Adresiniz</label>
-                        </div>
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
 
-                        <div data-mdb-input-init class="form-outline mb-4">
-                            <input type="password" id="form2Example28" class="form-control form-control-lg" />
-                            <label class="form-label" for="form2Example28">Şifre</label>
-                        </div>
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
 
-                        <div class="pt-1 mb-4">
-                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block" type="button">Giriş Yap</button>
-                        </div>
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
 
-                        <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Şifreni mi unttun?</a></p>
-                        <p style="color: #d3d3d3">Hesabınız yok mu? <a asp-action="SingUp" asp-controller="Home" class="link-info">Buradan kayıt olabilirsiniz</a></p>
+                            <!-- Kayıt Ol -->
+                            <p class="mt-3" style="color: #d3d3d3">
+                                Hesabınız yok mu?
+                                <a href="/Account/Register" class="link-info">Buradan kayıt olabilirsiniz</a>
+                            </p>
 
-                    </form>
+                        </form>
+                    </div>
+                </div>
 
+                <!-- Sağ Tarafa Görsel -->
+                <div class="col-sm-6 px-0 d-none d-sm-block">
+                    <img src="/Images/back2.jpg" alt="Giriş görseli" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
                 </div>
 
             </div>
-            <div class="col-sm-6 px-0 d-none d-sm-block">
-                <img src="/Images/back2.jpg"
-                     alt="Giriş görseli" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
+</body>
+</html>
