@@ -2,10 +2,12 @@ wwwroot\css\forgotPassword.css
 wwwroot\css\login.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\Images\atun_2.jpg
 wwwroot\Images\back.jpg
 wwwroot\Images\back2.jpg
 wwwroot\Images\back3.jpg
 wwwroot\Images\background.jpg
+wwwroot\Images\login_atun.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

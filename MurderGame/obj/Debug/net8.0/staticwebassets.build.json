@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LtFVQyfN4rWXx3Bfqxnzo8ZtemvePun0U+8+G1JQ/xc=",
+  "Hash": "9+BcwC0hQ6W5g8smJgw88ODByl/tpurHDPZTsuoEJ1Q=",
   "Source": "MurderGame.UI",
   "BasePath": "_content/MurderGame.UI",
   "Mode": "Default",
@@ -143,6 +143,27 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\atun_2.jpg",
+      "SourceId": "MurderGame.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\",
+      "BasePath": "_content/MurderGame.UI",
+      "RelativePath": "Images/atun_2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "khyjssv9cq",
+      "Integrity": "WPFsxKNtKPYvfJoRa/CW/SB4ZrnGLeT81LWcfaBFH3g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\atun_2.jpg"
+    },
+    {
       "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\back.jpg",
       "SourceId": "MurderGame.UI",
       "SourceType": "Discovered",
@@ -225,6 +246,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\background.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\login_atun.jpg",
+      "SourceId": "MurderGame.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\",
+      "BasePath": "_content/MurderGame.UI",
+      "RelativePath": "Images/login_atun#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jtj8xedb65",
+      "Integrity": "V1+z39T5Oq4vRmMKYHmswLwdG7t2/m9dbXrsmiEDxwo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\login_atun.jpg"
     },
     {
       "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\js\\site.js",
@@ -1775,6 +1817,88 @@
       ]
     },
     {
+      "Route": "Images/atun_2.jpg",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\atun_2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43030"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WPFsxKNtKPYvfJoRa/CW/SB4ZrnGLeT81LWcfaBFH3g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 14:40:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WPFsxKNtKPYvfJoRa/CW/SB4ZrnGLeT81LWcfaBFH3g="
+        }
+      ]
+    },
+    {
+      "Route": "Images/atun_2.khyjssv9cq.jpg",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\atun_2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43030"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WPFsxKNtKPYvfJoRa/CW/SB4ZrnGLeT81LWcfaBFH3g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 14:40:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "khyjssv9cq"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/atun_2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WPFsxKNtKPYvfJoRa/CW/SB4ZrnGLeT81LWcfaBFH3g="
+        }
+      ]
+    },
+    {
       "Route": "Images/back.jpg",
       "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\back.jpg",
       "Selectors": [],
@@ -2099,6 +2223,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-HNmVcwCr4bS0Gx2Z+L73yAGOW6SU9gP2GBHFnCiDRgk="
+        }
+      ]
+    },
+    {
+      "Route": "Images/login_atun.jpg",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\login_atun.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164786"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V1+z39T5Oq4vRmMKYHmswLwdG7t2/m9dbXrsmiEDxwo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 14:38:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-V1+z39T5Oq4vRmMKYHmswLwdG7t2/m9dbXrsmiEDxwo="
+        }
+      ]
+    },
+    {
+      "Route": "Images/login_atun.jtj8xedb65.jpg",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\login_atun.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164786"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V1+z39T5Oq4vRmMKYHmswLwdG7t2/m9dbXrsmiEDxwo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 14:38:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jtj8xedb65"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/login_atun.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-V1+z39T5Oq4vRmMKYHmswLwdG7t2/m9dbXrsmiEDxwo="
         }
       ]
     },

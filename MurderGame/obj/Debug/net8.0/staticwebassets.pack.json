@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\MurderGame.UI.rvq5m87ujl.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\atun_2.jpg",
+      "PackagePath": "staticwebassets\\Images\\atun_2.jpg"
+    },
+    {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\back.jpg",
       "PackagePath": "staticwebassets\\Images\\back.jpg"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\background.jpg",
       "PackagePath": "staticwebassets\\Images\\background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\login_atun.jpg",
+      "PackagePath": "staticwebassets\\Images\\login_atun.jpg"
     },
     {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\forgotPassword.css",
