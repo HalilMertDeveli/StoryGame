@@ -2,6 +2,7 @@
     background: url('/Images/Login/back3.jpg') no-repeat center center fixed;
     background-size: cover;
 }
+
 .bg-image-vertical {
     position: relative;
     overflow: hidden;
@@ -15,4 +16,41 @@
         height: 100%;
     }
 }
+
+form {
+    text-align: center;
+}
+
+    form .small {
+        margin-top: 15px;
+    }
+
+    form .text-center p {
+        margin: 10px 0;
+    }
+.btn-group {
+    display: flex;
+    justify-content: center; /* Butonları ortalar */
+    gap: 15px; /* Butonlar arasındaki boşluğu ayarlar */
+    margin-top: 15px;
+}
+
+.btn-floating {
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .btn-floating:hover {
+        background-color: #e0e0e0;
+        transform: scale(1.1);
+    }
+
 
