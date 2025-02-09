@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MurderGame.UI", "MurderGame\MurderGame.UI.csproj", "{DA835DA0-EA6F-4F94-87B9-BCF691B63CF4}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MurderGame.Dtos", "MurderGame.Dtos\MurderGame.Dtos.csproj", "{82A56902-0104-45B3-A560-D85529FAADB4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MurderGame.Entities", "MurderGame.Entities\MurderGame.Entities.csproj", "{847AF8AA-A7CB-4420-9694-4CF73C453295}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MurderGame.Helpers", "MurderGame.Helpers\MurderGame.Helpers.csproj", "{3DB85D5C-1C35-4AC2-B3C1-D65685269BA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{847AF8AA-A7CB-4420-9694-4CF73C453295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{847AF8AA-A7CB-4420-9694-4CF73C453295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{847AF8AA-A7CB-4420-9694-4CF73C453295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DB85D5C-1C35-4AC2-B3C1-D65685269BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB85D5C-1C35-4AC2-B3C1-D65685269BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB85D5C-1C35-4AC2-B3C1-D65685269BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB85D5C-1C35-4AC2-B3C1-D65685269BA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
