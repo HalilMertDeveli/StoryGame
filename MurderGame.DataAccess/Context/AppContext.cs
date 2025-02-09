@@ -16,7 +16,10 @@ namespace MurderGame.DataAccess.Context
         public AppDbContext() { }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-      
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<AdminActivityLog> AdminActivityLogs { get; set; }
+        public DbSet<ApplicationUserMessage> UserMessagesTable { get; set; }
+        public DbSet<ApplicationUserProfileDetails> UserProfileDetailsTable { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -25,6 +28,8 @@ namespace MurderGame.DataAccess.Context
             builder.ApplyConfiguration(new ApplicationUserTableConfiguration());
             builder.ApplyConfiguration(new ApplicationUserProfileTableConfiguration());
             builder.ApplyConfiguration(new ApplicationUserMessagesTableConfiguration());
+            builder.ApplyConfiguration(new AdminConfiguration());  // Admin Configuration
+            builder.ApplyConfiguration(new AdminActivityLogConfiguration());  // Admin Activity Configuration
             builder.ApplyConfiguration(new RolesTableConfiguration());
 
             // ApplicationUser ve ApplicationUserProfileDetails arasında 1-1 ilişki
@@ -32,18 +37,17 @@ namespace MurderGame.DataAccess.Context
                 .HasOne(u => u.ApplicationUserProfileDetails)
                 .WithOne(p => p.ApplicationUser)
                 .HasForeignKey<ApplicationUserProfileDetails>(p => p.UserId)
-                .OnDelete(DeleteBehavior.Cascade); // Kullanıcı silinirse profili de silinsin
+                .OnDelete(DeleteBehavior.Cascade);
 
             // ApplicationUser ve ApplicationUserMessage arasında 1-N ilişki
             builder.Entity<ApplicationUser>()
                 .HasMany(u => u.Messages)
-                .WithOne(m => m.Sender) // ❌ Hatalı: .WithOne(m => m.SenderId) yerine .WithOne(m => m.Sender)
+                .WithOne(m => m.Sender)
                 .HasForeignKey(m => m.SenderId)
-                .OnDelete(DeleteBehavior.Cascade); // Kullanıcı silinirse mesajları da silinsin
+                .OnDelete(DeleteBehavior.Cascade);
         }
-        public DbSet<ApplicationUserMessage> UserMessagesTable { get; set; }
-        public DbSet<ApplicationUserProfileDetails> UserProfileDetailsTable { get; set; }
     }
+
 
 }
 

@@ -125,6 +125,62 @@ namespace MurderGame.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("MurderGame.Entities.Domains.Admin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("AssignedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Level")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Admins", (string)null);
+                });
+
+            modelBuilder.Entity("MurderGame.Entities.Domains.AdminActivityLog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("ActionDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("AdminId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
+
+                    b.ToTable("AdminActivityLogs", (string)null);
+                });
+
             modelBuilder.Entity("MurderGame.Entities.Domains.ApplicationUser", b =>
                 {
                     b.Property<int>("Id")
@@ -385,6 +441,28 @@ namespace MurderGame.DataAccess.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MurderGame.Entities.Domains.Admin", b =>
+                {
+                    b.HasOne("MurderGame.Entities.Domains.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MurderGame.Entities.Domains.AdminActivityLog", b =>
+                {
+                    b.HasOne("MurderGame.Entities.Domains.Admin", "Admin")
+                        .WithMany("AdminLogs")
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+                });
+
             modelBuilder.Entity("MurderGame.Entities.Domains.MurderGame.Entities.Domains.ApplicationUserMessage", b =>
                 {
                     b.HasOne("MurderGame.Entities.Domains.ApplicationUser", "Sender")
@@ -405,6 +483,11 @@ namespace MurderGame.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
+                });
+
+            modelBuilder.Entity("MurderGame.Entities.Domains.Admin", b =>
+                {
+                    b.Navigation("AdminLogs");
                 });
 
             modelBuilder.Entity("MurderGame.Entities.Domains.ApplicationUser", b =>

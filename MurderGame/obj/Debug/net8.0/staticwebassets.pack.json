@@ -5,32 +5,52 @@
       "PackagePath": "staticwebassets\\MurderGame.UI.rvq5m87ujl.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\Index\\index_walpaper.png",
+      "PackagePath": "staticwebassets\\Images\\Index\\index_walpaper.png"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\Login\\back.jpg",
+      "PackagePath": "staticwebassets\\Images\\Login\\back.jpg"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\Login\\back2.jpg",
+      "PackagePath": "staticwebassets\\Images\\Login\\back2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\Login\\back3.jpg",
+      "PackagePath": "staticwebassets\\Images\\Login\\back3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\Login\\background.jpg",
+      "PackagePath": "staticwebassets\\Images\\Login\\background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\Singup\\sing_up_1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Singup\\sing_up_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\Singup\\sing_up_4.jpg",
+      "PackagePath": "staticwebassets\\Images\\Singup\\sing_up_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\Singup\\sing_ıp_3.jpg",
+      "PackagePath": "staticwebassets\\Images\\Singup\\sing_ıp_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\Singup\\sinn_up_2.jpg",
+      "PackagePath": "staticwebassets\\Images\\Singup\\sinn_up_2.jpg"
+    },
+    {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\atun_2.jpg",
       "PackagePath": "staticwebassets\\Images\\atun_2.jpg"
     },
     {
-      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\back.jpg",
-      "PackagePath": "staticwebassets\\Images\\back.jpg"
-    },
-    {
-      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\back2.jpg",
-      "PackagePath": "staticwebassets\\Images\\back2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\back3.jpg",
-      "PackagePath": "staticwebassets\\Images\\back3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\background.jpg",
-      "PackagePath": "staticwebassets\\Images\\background.jpg"
-    },
-    {
-      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\index_walpaper.png",
-      "PackagePath": "staticwebassets\\Images\\index_walpaper.png"
-    },
-    {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\Images\\login_atun.jpg",
       "PackagePath": "staticwebassets\\Images\\login_atun.jpg"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Singup.css",
+      "PackagePath": "staticwebassets\\css\\Singup.css"
     },
     {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\forgotPassword.css",

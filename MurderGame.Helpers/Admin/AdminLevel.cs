@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MurderGame.Helpers.Admin
 {
-    internal class AdminLevel
+    public static class AdminLevels
     {
+        public const string SuperAdmin = "SuperAdmin";
+        public const string Moderator = "Moderator";
+        public const string Support = "Support";
     }
+
 }
