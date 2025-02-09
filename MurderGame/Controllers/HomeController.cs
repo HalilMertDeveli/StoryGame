@@ -43,5 +43,10 @@ namespace MurderGame.Controllers
         {
             return View();
         }
+
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }
