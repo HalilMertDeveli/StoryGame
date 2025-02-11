@@ -45,26 +45,24 @@
                                         <ul></ul>
                                     </div>
 
-                                    <!-- Kullanıcı Adı -->
                                     <div class="form-outline mb-4">
-                                        <input type="text" id="userNickName" name="UserNickName" class="form-control" />
-                                        <label class="form-label" for="userNickName">Kullanıcı Adı</label>
+                                        <input asp-for="UserNickName" class="form-control" />
+                                        <label class="form-label" for="UserNickName">Kullanıcı Adı</label>
                                         <span asp-validation-for="UserNickName" class="text-danger"></span>
                                     </div>
 
-                                    <!-- E-posta -->
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="email" name="Email" class="form-control" />
-                                        <label class="form-label" for="email">E-posta adresi</label>
+                                        <input asp-for="Email" type="email" class="form-control" />
+                                        <label class="form-label" for="Email">E-posta adresi</label>
                                         <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
 
-                                    <!-- Şifre -->
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="password" name="PasswordHash" class="form-control" />
-                                        <label class="form-label" for="password">Şifre</label>
+                                        <input asp-for="PasswordHash" type="password" class="form-control" />
+                                        <label class="form-label" for="PasswordHash">Şifre</label>
                                         <span asp-validation-for="PasswordHash" class="text-danger"></span>
                                     </div>
+
 
                                     <!-- Profil Resmi (Dosya Yükleme) -->
                                     <div class="form-outline mb-4">

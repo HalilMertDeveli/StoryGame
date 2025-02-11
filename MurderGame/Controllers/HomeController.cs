@@ -29,8 +29,9 @@ namespace MurderGame.Controllers
                 {
                     ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                 }
-                return View(applicationUser);  // Hatalar görünür olacak
+                return View(applicationUser);  // Model eksiksiz geri döndürülüyor
             }
+
 
             // Dosya yükleme işlemi
             if (ProfilePicture != null && ProfilePicture.Length > 0)
