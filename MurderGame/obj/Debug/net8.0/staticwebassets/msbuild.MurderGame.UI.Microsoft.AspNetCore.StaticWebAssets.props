@@ -66,8 +66,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>mqcmm2iawu</Fingerprint>
-      <Integrity>/qdOxAK57oBPcEO6OVzuEBf7l23cZ4J2rmRkZovtLdk=</Integrity>
+      <Fingerprint>fuq4nlfeu2</Fingerprint>
+      <Integrity>GUQQ/MTQFCfR/gkQaXfpg9miDjEjUGOnOSNDxtSaqjg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Singup.css'))</OriginalItemSpec>

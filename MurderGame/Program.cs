@@ -1,4 +1,9 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MurderGame.Business.DependencyResolvers.Microsoft;
+using MurderGame.Business.Services;
+using MurderGame.Business.ValidationRules;
+using MurderGame.Entities.Domains;
 
 namespace MurderGame
 {
@@ -10,7 +15,16 @@ namespace MurderGame
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //connection string lower
             builder.Services.AddDependencies(builder.Configuration);
+            //fluent validation lower
+            builder.Services.AddValidatorsFromAssemblyContaining<ApplicationUserValidator>();
+            builder.Services.AddScoped<SignUpService>();
+            builder.Services.AddTransient<IValidator<ApplicationUser>, ApplicationUserValidator>();
+
+
+
+
 
             var app = builder.Build();
 

@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MurderGame.DataAccess\MurderGame.DataAccess.csproj" />
     <ProjectReference Include="..\MurderGame.Dtos\MurderGame.Dtos.csproj" />
   </ItemGroup>
