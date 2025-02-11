@@ -36,7 +36,8 @@ namespace MurderGame.Business.ValidationRules
                 .Must(IsValidImageFormat).WithMessage("Geçerli bir resim formatı olmalıdır (jpg, png, jpeg).")
                 .When(x => !string.IsNullOrEmpty(x.ProfilePicture));
             RuleFor(x => x.ApplicationUserProfileDetails).Null();
-
+            RuleFor(x => x.Bio)
+                .MaximumLength(250).WithMessage("Biyografi 250 karakterden uzun olamaz.");
 
         }
 

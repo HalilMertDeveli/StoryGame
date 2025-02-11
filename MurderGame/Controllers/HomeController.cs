@@ -20,29 +20,25 @@ namespace MurderGame.Controllers
         [HttpPost]
         public IActionResult SingUp(ApplicationUser applicationUser, IFormFile ProfilePicture)
         {
-            var validationResult = _signUpService.Validate(applicationUser);
+            var validationResult = _signUpService.Validate(applicationUser, ProfilePicture);
 
-            // FluentValidation hatalarını ModelState'e ekle
+            // Hataları ModelState'e ekle
             if (!validationResult.IsValid)
             {
                 foreach (var error in validationResult.Errors)
                 {
                     ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                 }
-                return View(applicationUser);  // Model eksiksiz geri döndürülüyor
+                return View(applicationUser);
             }
 
-
-            // Dosya yükleme işlemi
-            if (ProfilePicture != null && ProfilePicture.Length > 0)
+            // Resim yükleme işlemi
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", ProfilePicture.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", ProfilePicture.FileName);
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    ProfilePicture.CopyTo(stream);
-                }
-                applicationUser.ProfilePicture = "/uploads/" + ProfilePicture.FileName;
+                ProfilePicture.CopyTo(stream);
             }
+            applicationUser.ProfilePicture = "/uploads/" + ProfilePicture.FileName;
 
             TempData["Message"] = "Kayıt başarılı!";
             return RedirectToAction("Index");

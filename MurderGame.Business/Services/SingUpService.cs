@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using MurderGame.Entities.Domains;
+using Microsoft.AspNetCore.Http;
 
 namespace MurderGame.Business.Services
 {
@@ -14,10 +15,17 @@ namespace MurderGame.Business.Services
             _validator = validator;
         }
 
-        public ValidationResult Validate(ApplicationUser applicationUser)
+        public ValidationResult Validate(ApplicationUser applicationUser, IFormFile profilePicture)
         {
-            // FluentValidation doğrulamasını burada yapıyoruz.
-            return _validator.Validate(applicationUser);
+            var validationResult = _validator.Validate(applicationUser);
+
+            // Resim yüklenmiş mi kontrol et
+            if (profilePicture == null || profilePicture.Length == 0)
+            {
+                validationResult.Errors.Add(new ValidationFailure("ProfilePicture", "Profil resmi yüklemek zorunludur."));
+            }
+
+            return validationResult;
         }
     }
 }
