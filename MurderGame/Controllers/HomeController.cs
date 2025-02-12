@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MurderGame.Business.Services;
+using MurderGame.Dtos.LoginDtos;
 using MurderGame.Dtos.SingupDtos;
 using MurderGame.Entities.Domains;
 using MurderGame.Models;
@@ -14,15 +15,17 @@ namespace MurderGame.Controllers
         private readonly SignUpService _signUpService;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly LoginService _loginService;
 
         public HomeController(ILogger<HomeController> logger, SignUpService signUpService,
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager, LoginService loginService)
         {
             _logger = logger;
             _signUpService = signUpService;
             _userManager = userManager;
             _signInManager = signInManager;
+            _loginService = loginService;
         }
 
 
@@ -80,6 +83,27 @@ namespace MurderGame.Controllers
         public IActionResult SingUp()
         {
             return View(new SignUpDto());
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginDto loginDto)
+        {
+            var loginResult = await _loginService.LoginAsync(loginDto);
+
+            if (loginResult.Succeeded)
+            {
+                // Kullanıcı giriş yaptıktan sonra MemberController/Index'e yönlendirme
+                return RedirectToAction("Index", "Member");
+            }
+
+            // Hatalı giriş durumunda hata mesajı ekle
+            ModelState.AddModelError(string.Empty, "Geçersiz giriş bilgileri. Lütfen tekrar deneyin.");
+            return View(loginDto);
         }
 
 

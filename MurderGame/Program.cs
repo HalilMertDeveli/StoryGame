@@ -15,6 +15,9 @@ namespace MurderGame
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddScoped<LoginService>();
+
+
             // Add services to the container
             builder.Services.AddControllersWithViews();
 
