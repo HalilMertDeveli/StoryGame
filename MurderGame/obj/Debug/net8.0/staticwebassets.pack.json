@@ -305,6 +305,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\uploads\\Screenshot 2025-02-04 210554.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2025-02-04 210554.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MurderGame.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

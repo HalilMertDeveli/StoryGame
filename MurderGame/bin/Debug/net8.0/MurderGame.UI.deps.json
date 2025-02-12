@@ -1170,6 +1170,9 @@
         }
       },
       "MurderGame.Dtos/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http": "2.3.0"
+        },
         "runtime": {
           "MurderGame.Dtos.dll": {
             "assemblyVersion": "1.0.0",

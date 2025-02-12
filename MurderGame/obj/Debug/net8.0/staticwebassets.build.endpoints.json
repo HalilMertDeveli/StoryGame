@@ -6233,6 +6233,88 @@
           "Value": "sha256-OZVI+w57FGwS9boYCZpH1ZSpcP7pYhLu4KtIUvPlZ4I="
         }
       ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-02-04 210554.d6ztf93kue.png",
+      "AssetFile": "uploads/Screenshot 2025-02-04 210554.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105510"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 18:01:58 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d6ztf93kue"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Screenshot 2025-02-04 210554.png"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-02-04 210554.png",
+      "AssetFile": "uploads/Screenshot 2025-02-04 210554.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105510"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 18:01:58 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk="
+        }
+      ]
     }
   ]
 }

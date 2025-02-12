@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MurderGame.Business.Services;
+using MurderGame.Dtos.SingupDtos;
 using MurderGame.Entities.Domains;
 using MurderGame.Models;
 
@@ -18,38 +19,55 @@ namespace MurderGame.Controllers
         }
 
         [HttpPost]
-        public IActionResult SingUp(ApplicationUser applicationUser, IFormFile ProfilePicture)
+        public IActionResult SingUp(SignUpDto signUpDto)
         {
-            var validationResult = _signUpService.Validate(applicationUser, ProfilePicture);
+            var validationResult = _signUpService.Validate(signUpDto);
 
-            // Hataları ModelState'e ekle
             if (!validationResult.IsValid)
             {
                 foreach (var error in validationResult.Errors)
                 {
                     ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                 }
-                return View(applicationUser);
+                return View(signUpDto);
             }
 
-            // Resim yükleme işlemi
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", ProfilePicture.FileName);
+            // DTO’dan ApplicationUser oluşturma
+            var applicationUser = new ApplicationUser
+            {
+                UserNickName = signUpDto.UserNickName,
+                Email = signUpDto.Email,
+                PasswordHash = signUpDto.PasswordHash,
+                Bio = signUpDto.Bio
+            };
+
+            // Profil resmini kaydetme
+            var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+            if (!Directory.Exists(uploadsPath))
+            {
+                Directory.CreateDirectory(uploadsPath);
+            }
+
+            var filePath = Path.Combine(uploadsPath, signUpDto.ProfilePicture.FileName);
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                ProfilePicture.CopyTo(stream);
+                signUpDto.ProfilePicture.CopyTo(stream);
             }
-            applicationUser.ProfilePicture = "/uploads/" + ProfilePicture.FileName;
+            applicationUser.ProfilePicture = "/uploads/" + signUpDto.ProfilePicture.FileName;
 
+            // Burada veritabanı kaydı yapılabilir
             TempData["Message"] = "Kayıt başarılı!";
             return RedirectToAction("Index");
         }
 
 
+
         [HttpGet]
         public IActionResult SingUp()
         {
-            return View(new ApplicationUser());
+            return View(new SignUpDto());
         }
+
 
         public IActionResult Index()
         {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ytL+C4fAPqg2A6YNyg9CBJt++8FJypo+oJBsUJcukrM=",
+  "Hash": "eI0iInN+LDoJ2SdfXqO3dYp5C8xVLv1XOhWHoH01Sac=",
   "Source": "MurderGame.UI",
   "BasePath": "_content/MurderGame.UI",
   "Mode": "Default",
@@ -1632,6 +1632,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\uploads\\Screenshot 2025-02-04 210554.png",
+      "SourceId": "MurderGame.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\",
+      "BasePath": "_content/MurderGame.UI",
+      "RelativePath": "uploads/Screenshot 2025-02-04 210554#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d6ztf93kue",
+      "Integrity": "VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Screenshot 2025-02-04 210554.png"
     }
   ],
   "Endpoints": [
@@ -7946,6 +7967,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-V/3YXjI3ayRKQ7zUvYmcB3GK0DcXJT1Vwcb8tkCXprw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-02-04 210554.d6ztf93kue.png",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\uploads\\Screenshot 2025-02-04 210554.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105510"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 18:01:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d6ztf93kue"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Screenshot 2025-02-04 210554.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Screenshot 2025-02-04 210554.png",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\uploads\\Screenshot 2025-02-04 210554.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105510"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 18:01:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk="
         }
       ]
     }

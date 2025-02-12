@@ -18,9 +18,9 @@ namespace MurderGame
             //connection string lower
             builder.Services.AddDependencies(builder.Configuration);
             //fluent validation lower
-            builder.Services.AddValidatorsFromAssemblyContaining<ApplicationUserValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<SingUpDtoValidator>();
             builder.Services.AddScoped<SignUpService>();
-            builder.Services.AddTransient<IValidator<ApplicationUser>, ApplicationUserValidator>();
+            builder.Services.AddTransient<IValidator<ApplicationUser>, SingUpDtoValidator>();
 
 
 

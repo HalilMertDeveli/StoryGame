@@ -10,3 +10,4 @@ C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Dtos\obj\Debug
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Dtos\obj\Debug\net8.0\refint\MurderGame.Dtos.dll
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Dtos\obj\Debug\net8.0\MurderGame.Dtos.pdb
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Dtos\obj\Debug\net8.0\ref\MurderGame.Dtos.dll
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Dtos\obj\Debug\net8.0\MurderGame.Dtos.csproj.AssemblyReference.cache

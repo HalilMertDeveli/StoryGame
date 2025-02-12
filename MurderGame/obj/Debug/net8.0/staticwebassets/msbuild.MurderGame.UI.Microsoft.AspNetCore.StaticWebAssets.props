@@ -1368,5 +1368,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MurderGame.UI.rvq5m87ujl.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\Screenshot 2025-02-04 210554.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MurderGame.UI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MurderGame.UI</BasePath>
+      <RelativePath>uploads/Screenshot 2025-02-04 210554.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>d6ztf93kue</Fingerprint>
+      <Integrity>VbplFYXMIA0MpHiPVMF/wDWzrHaOf6ZHqgyOPAIt2mk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\Screenshot 2025-02-04 210554.png'))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>

@@ -1233,6 +1233,9 @@
       "MurderGame.Dtos/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http": "2.3.0"
+        },
         "compile": {
           "bin/placeholder/MurderGame.Dtos.dll": {}
         },
