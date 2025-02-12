@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MurderGame.Business.Services;
 using MurderGame.Dtos.SingupDtos;
@@ -11,15 +12,22 @@ namespace MurderGame.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly SignUpService _signUpService;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public HomeController(ILogger<HomeController> logger, SignUpService signUpService)
+        public HomeController(ILogger<HomeController> logger, SignUpService signUpService,
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager)
         {
             _logger = logger;
             _signUpService = signUpService;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
+
         [HttpPost]
-        public IActionResult SingUp(SignUpDto signUpDto)
+        public async Task<IActionResult> SingUp(SignUpDto signUpDto)
         {
             var validationResult = _signUpService.Validate(signUpDto);
 
@@ -37,28 +45,34 @@ namespace MurderGame.Controllers
             {
                 UserNickName = signUpDto.UserNickName,
                 Email = signUpDto.Email,
-                PasswordHash = signUpDto.PasswordHash,
+                UserName = signUpDto.Email,  // UserName genelde Email ile aynı tutulur
                 Bio = signUpDto.Bio
             };
 
-            // Profil resmini kaydetme
-            var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
-            if (!Directory.Exists(uploadsPath))
+            // Kullanıcı oluşturma işlemi
+            var result = await _userManager.CreateAsync(applicationUser, signUpDto.PasswordHash);
+            if (result.Succeeded)
             {
-                Directory.CreateDirectory(uploadsPath);
+                // Member rolünü atama
+                if (!await _userManager.IsInRoleAsync(applicationUser, "Member"))
+                {
+                    await _userManager.AddToRoleAsync(applicationUser, "Member");
+                }
+
+                // Kullanıcıyı giriş yaptır ve MemberController/Index'e yönlendir
+                await _signInManager.SignInAsync(applicationUser, isPersistent: false);
+                return RedirectToAction("Index", "Member");
             }
 
-            var filePath = Path.Combine(uploadsPath, signUpDto.ProfilePicture.FileName);
-            using (var stream = new FileStream(filePath, FileMode.Create))
+            // Eğer hata varsa hata mesajlarını ekle
+            foreach (var error in result.Errors)
             {
-                signUpDto.ProfilePicture.CopyTo(stream);
+                ModelState.AddModelError(string.Empty, error.Description);
             }
-            applicationUser.ProfilePicture = "/uploads/" + signUpDto.ProfilePicture.FileName;
 
-            // Burada veritabanı kaydı yapılabilir
-            TempData["Message"] = "Kayıt başarılı!";
-            return RedirectToAction("Index");
+            return View(signUpDto);
         }
+
 
 
 
