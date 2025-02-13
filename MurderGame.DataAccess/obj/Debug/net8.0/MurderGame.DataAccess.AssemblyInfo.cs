@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MurderGame.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5960c7babd7db5e650c53fdccb323366cdb3931")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+346d2d5711b516b20885545d3201b8235b18860b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MurderGame.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MurderGame.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
