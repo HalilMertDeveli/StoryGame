@@ -94,18 +94,24 @@ namespace MurderGame.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
-            var loginResult = await _loginService.LoginAsync(loginDto);
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError(string.Empty, "Lütfen tüm alanları doldurun.");
+                return View(loginDto);
+            }
+
+            var loginResult = await _signInManager.PasswordSignInAsync(
+                loginDto.LoginIdentifier, loginDto.Password, loginDto.RememberMe, lockoutOnFailure: false);
 
             if (loginResult.Succeeded)
             {
-                // Kullanıcı giriş yaptıktan sonra MemberController/Index'e yönlendirme
                 return RedirectToAction("Index", "Member");
             }
 
-            // Hatalı giriş durumunda hata mesajı ekle
-            ModelState.AddModelError(string.Empty, "Geçersiz giriş bilgileri. Lütfen tekrar deneyin.");
+            ModelState.AddModelError(string.Empty, "E-posta veya şifre hatalı. Lütfen tekrar deneyin.");
             return View(loginDto);
         }
+
 
 
         public IActionResult Index()
@@ -159,6 +165,61 @@ namespace MurderGame.Controllers
             await _signInManager.SignInAsync(user, isPersistent: false);
             return RedirectToAction("Index", "Member");
         }
+
+        [HttpGet]
+        public IActionResult GoogleSignUp()
+        {
+            var redirectUrl = Url.Action("GoogleSignUpCallback", "Home");
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Google", redirectUrl);
+            return Challenge(properties, "Google");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GoogleSignUpCallback()
+        {
+            var info = await _signInManager.GetExternalLoginInfoAsync();
+            if (info == null) return RedirectToAction("SingUp");
+
+            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+            var name = info.Principal.FindFirstValue(ClaimTypes.Name);
+
+            // Kullanıcı mevcut mu?
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                // Yeni kullanıcı oluştur
+                user = new ApplicationUser
+                {
+                    UserName = email,
+                    Email = email,
+                    UserNickName = name,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                var result = await _userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    // Kullanıcıya "Member" rolünü ata
+                    await _userManager.AddToRoleAsync(user, "Member");
+                    // Google girişini ilişkilendir
+                    await _userManager.AddLoginAsync(user, info);
+                }
+                else
+                {
+                    // Hata mesajlarını ekle
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return RedirectToAction("SingUp");
+                }
+            }
+
+            // Kullanıcıyı giriş yaptır
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            return RedirectToAction("Index", "Member");
+        }
+
 
 
     }

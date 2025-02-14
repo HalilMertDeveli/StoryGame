@@ -1,4 +1,4 @@
-using FluentValidation;
+﻿using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MurderGame.Business.DependencyResolvers.Microsoft;
@@ -39,9 +39,10 @@ namespace MurderGame
             builder.Services.AddAuthentication()
                 .AddGoogle(googleOptions =>
                 {
-                    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"]; // Google API ClientId
-                    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]; // Google API ClientSecret
+                    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? "sad"; // Google API ClientId
+                    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? "sad"; // Google API ClientSecret
                     googleOptions.CallbackPath = "/signin-google"; // Bu path'e Google callback yapar
+                    //yaprık
                 });
 
 

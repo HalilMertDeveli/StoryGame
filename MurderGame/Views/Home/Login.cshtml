@@ -15,9 +15,17 @@
             <div class="row">
                 <div class="col-sm-6 text-black">
                     <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-                        <!-- Formu Doğru Controller ve Action'a Yönlendir -->
+                        <!-- Form -->
                         <form method="post" asp-controller="Home" asp-action="Login" style="width: 23rem;">
                             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Giriş Yap</h3>
+
+                            <!-- Hata Mesajı Yalnızca Hata Olduğunda Görünecek -->
+                            @if (!string.IsNullOrEmpty(ViewData.ModelState[string.Empty]?.Errors.FirstOrDefault()?.ErrorMessage))
+                            {
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>Hata!</strong> @ViewData.ModelState[string.Empty]?.Errors.FirstOrDefault()?.ErrorMessage
+                                </div>
+                            }
 
                             <!-- Kullanıcı Adı veya E-Posta -->
                             <div class="form-outline mb-4">
@@ -48,28 +56,20 @@
                             <div class="text-center">
                                 <p>veya aşağıdakilerle giriş yap:</p>
                                 <div class="btn-group">
-                                    <!-- Facebook -->
                                     <a href="#" class="btn btn-floating">
                                         <i class="fab fa-facebook-f"></i> Facebook ile Giriş Yap
                                     </a>
-        
-                                    <!-- Google -->
                                     <a asp-controller="Home" asp-action="GoogleLogin" class="btn btn-floating">
                                         <i class="fab fa-google"></i> Google ile Giriş Yap
                                     </a>
-        
-                                    <!-- Twitter -->
                                     <a href="#" class="btn btn-floating">
                                         <i class="fab fa-twitter"></i> Twitter ile Giriş Yap
                                     </a>
-
-                                    <!-- GitHub -->
                                     <a href="#" class="btn btn-floating">
                                         <i class="fab fa-github"></i> GitHub ile Giriş Yap
                                     </a>
                                 </div>
                             </div>
-
 
                             <!-- Kayıt Ol Linki -->
                             <p class="mt-3" style="color: #d3d3d3; font-size: 18px;">
