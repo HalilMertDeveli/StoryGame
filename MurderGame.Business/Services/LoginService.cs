@@ -34,5 +34,29 @@ namespace MurderGame.Business.Services
             // Kullanıcıyı parola ile doğrula
             return await _signInManager.PasswordSignInAsync(user, loginDto.Password, loginDto.RememberMe, lockoutOnFailure: false);
         }
+        public async Task<ApplicationUser> HandleGoogleLoginAsync(string email, string name)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                user = new ApplicationUser
+                {
+                    Email = email,
+                    UserName = email,
+                    UserNickName = name,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                var result = await _userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(user, "Member");
+                }
+            }
+
+            return user;
+        }
+
     }
 }
+

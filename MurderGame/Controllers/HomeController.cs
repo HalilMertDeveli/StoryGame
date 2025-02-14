@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MurderGame.Business.Services;
@@ -132,5 +133,33 @@ namespace MurderGame.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        //Google operations
+        [HttpGet]
+        public IActionResult GoogleLogin()
+        {
+            var redirectUrl = Url.Action("GoogleCallback", "Home");
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Google", redirectUrl);
+            return Challenge(properties, "Google");
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GoogleCallback()
+        {
+            var info = await _signInManager.GetExternalLoginInfoAsync();
+            if (info == null) return RedirectToAction("Login");
+
+            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+            var name = info.Principal.FindFirstValue(ClaimTypes.Name);
+
+            // Kullanıcıyı kontrol et ve yoksa kaydet
+            var user = await _loginService.HandleGoogleLoginAsync(email, name);
+
+            // Kullanıcıyı giriş yaptır
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            return RedirectToAction("Index", "Member");
+        }
+
+
     }
 }

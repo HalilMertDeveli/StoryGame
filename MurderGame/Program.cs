@@ -36,6 +36,15 @@ namespace MurderGame
             builder.Services.AddValidatorsFromAssemblyContaining<SingUpDtoValidator>();
             builder.Services.AddScoped<SignUpService>();
 
+            builder.Services.AddAuthentication()
+                .AddGoogle(googleOptions =>
+                {
+                    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"]; // Google API ClientId
+                    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]; // Google API ClientSecret
+                    googleOptions.CallbackPath = "/signin-google"; // Bu path'e Google callback yapar
+                });
+
+
             var app = builder.Build();
 
             // Create Roles (Admin, Member)

@@ -1,56 +1,28 @@
-﻿body {
-    background: url('/Images/Login/back3.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-.bg-image-vertical {
-    position: relative;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: auto 100%;
-}
-
-@media (min-width: 1025px) {
-    .h-custom-2 {
-        height: 100%;
-    }
-}
-
-form {
-    text-align: center;
-}
-
-    form .small {
-        margin-top: 15px;
-    }
-
-    form .text-center p {
-        margin: 10px 0;
-    }
-.btn-group {
+﻿.btn-group {
     display: flex;
-    justify-content: center; /* Butonları ortalar */
-    gap: 15px; /* Butonlar arasındaki boşluğu ayarlar */
+    justify-content: center;
+    gap: 15px;
     margin-top: 15px;
 }
 
 .btn-floating {
-    font-size: 28px;
-    width: 50px;
+    font-size: 10px; /* Yazı boyutunu küçülttüm */
+    width: 180px; /* Sabit genişlik verdim */
     height: 50px;
-    border-radius: 50%;
-    line-height: 50px;
-    background-color: #f0f0f0;
-    transition: all 0.3s ease;
+    border-radius: 5px;
+    background-color: #007bff; /* Mavi arka plan rengi */
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
-    .btn-floating:hover {
-        background-color: #e0e0e0;
-        transform: scale(1.1);
+    .btn-floating i {
+        margin-right: 10px;
     }
 
-
+    .btn-floating:hover {
+        background-color: #0056b3; /* Hover efekti */
+        transform: scale(1.05);
+    }

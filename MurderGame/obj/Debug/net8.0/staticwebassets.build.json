@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c8LOCTtUgTA16bnfCgqC78zfrFqZ/7kvhmpE4y34TJY=",
+  "Hash": "Ke0EGfIvWQH/SWb12iu8mNfjAL8IUV+9lYt8TGX8VvE=",
   "Source": "MurderGame.UI",
   "BasePath": "_content/MurderGame.UI",
   "Mode": "Default",
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fmrnn8e9t0",
-      "Integrity": "aV1sNs6FklyBOw4OMfky4LfFWfu4JO7jngudISK//g4=",
+      "Fingerprint": "un2zhto5hl",
+      "Integrity": "Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
@@ -1831,7 +1831,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1097"
+          "Value": "651"
         },
         {
           "Name": "Content-Type",
@@ -1839,11 +1839,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aV1sNs6FklyBOw4OMfky4LfFWfu4JO7jngudISK//g4=\""
+          "Value": "\"Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 14:51:55 GMT"
+          "Value": "Fri, 14 Feb 2025 14:31:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1853,12 +1853,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aV1sNs6FklyBOw4OMfky4LfFWfu4JO7jngudISK//g4="
+          "Value": "sha256-Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk="
         }
       ]
     },
     {
-      "Route": "css/login.fmrnn8e9t0.css",
+      "Route": "css/login.un2zhto5hl.css",
       "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\login.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1868,7 +1868,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1097"
+          "Value": "651"
         },
         {
           "Name": "Content-Type",
@@ -1876,11 +1876,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aV1sNs6FklyBOw4OMfky4LfFWfu4JO7jngudISK//g4=\""
+          "Value": "\"Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 14:51:55 GMT"
+          "Value": "Fri, 14 Feb 2025 14:31:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1890,7 +1890,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fmrnn8e9t0"
+          "Value": "un2zhto5hl"
         },
         {
           "Name": "label",
@@ -1898,7 +1898,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aV1sNs6FklyBOw4OMfky4LfFWfu4JO7jngudISK//g4="
+          "Value": "sha256-Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk="
         }
       ]
     },

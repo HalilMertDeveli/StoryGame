@@ -27,14 +27,14 @@
     <StaticWebAssetEndpoint Include="_content/MurderGame.UI/css/login.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\login.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-aV1sNs6FklyBOw4OMfky4LfFWfu4JO7jngudISK//g4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1097"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022aV1sNs6FklyBOw4OMfky4LfFWfu4JO7jngudISK//g4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 09 Feb 2025 14:51:55 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ\u002BmhQeiUIEk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"651"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ\u002BmhQeiUIEk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 14 Feb 2025 14:31:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/MurderGame.UI/css/login.fmrnn8e9t0.css">
+    <StaticWebAssetEndpoint Include="_content/MurderGame.UI/css/login.un2zhto5hl.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\login.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fmrnn8e9t0"},{"Name":"integrity","Value":"sha256-aV1sNs6FklyBOw4OMfky4LfFWfu4JO7jngudISK//g4="},{"Name":"label","Value":"_content/MurderGame.UI/css/login.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1097"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022aV1sNs6FklyBOw4OMfky4LfFWfu4JO7jngudISK//g4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 09 Feb 2025 14:51:55 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"un2zhto5hl"},{"Name":"integrity","Value":"sha256-Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ\u002BmhQeiUIEk="},{"Name":"label","Value":"_content/MurderGame.UI/css/login.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"651"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ\u002BmhQeiUIEk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 14 Feb 2025 14:31:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MurderGame.UI/css/Singup.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Singup.css'))</AssetFile>

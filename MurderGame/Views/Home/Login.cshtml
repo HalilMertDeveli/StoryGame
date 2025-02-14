@@ -48,20 +48,28 @@
                             <div class="text-center">
                                 <p>veya aşağıdakilerle giriş yap:</p>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-link btn-floating">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-link btn-floating">
-                                        <i class="fab fa-google"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-link btn-floating">
-                                        <i class="fab fa-twitter"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-link btn-floating">
-                                        <i class="fab fa-github"></i>
-                                    </button>
+                                    <!-- Facebook -->
+                                    <a href="#" class="btn btn-floating">
+                                        <i class="fab fa-facebook-f"></i> Facebook ile Giriş Yap
+                                    </a>
+        
+                                    <!-- Google -->
+                                    <a asp-controller="Home" asp-action="GoogleLogin" class="btn btn-floating">
+                                        <i class="fab fa-google"></i> Google ile Giriş Yap
+                                    </a>
+        
+                                    <!-- Twitter -->
+                                    <a href="#" class="btn btn-floating">
+                                        <i class="fab fa-twitter"></i> Twitter ile Giriş Yap
+                                    </a>
+
+                                    <!-- GitHub -->
+                                    <a href="#" class="btn btn-floating">
+                                        <i class="fab fa-github"></i> GitHub ile Giriş Yap
+                                    </a>
                                 </div>
                             </div>
+
 
                             <!-- Kayıt Ol Linki -->
                             <p class="mt-3" style="color: #d3d3d3; font-size: 18px;">
