@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MurderGame.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+599d3a667f238da62f3227cba4fd6c35f8d0ae41")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02f465539d1a32065b16b44270bbf585a7960d8d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MurderGame.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MurderGame.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

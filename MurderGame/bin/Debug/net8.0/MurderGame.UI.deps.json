@@ -12,6 +12,7 @@
           "FluentValidation.AspNetCore": "11.3.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "8.0.0",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.0",
+          "Microsoft.AspNetCore.Authentication.OAuth": "2.3.0",
           "Microsoft.AspNetCore.Authentication.Twitter": "8.0.0",
           "Microsoft.EntityFrameworkCore.Design": "9.0.1",
           "MurderGame.Business": "1.0.0",
@@ -142,6 +143,12 @@
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.23.53112"
           }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.OAuth/2.3.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication": "2.3.0",
+          "Newtonsoft.Json": "11.0.2"
         }
       },
       "Microsoft.AspNetCore.Authentication.Twitter/8.0.0": {
@@ -996,6 +1003,14 @@
           }
         }
       },
+      "Newtonsoft.Json/11.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.2.21924"
+          }
+        }
+      },
       "System.Buffers/4.6.0": {},
       "System.ClientModel/1.0.0": {
         "dependencies": {
@@ -1465,6 +1480,13 @@
       "path": "microsoft.aspnetcore.authentication.google/8.0.0",
       "hashPath": "microsoft.aspnetcore.authentication.google.8.0.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Authentication.OAuth/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ph4A+Y3v2r5pYynyXl1fy7EELydm/EClMhTjhvYmIQy6yeo1uN1RwyXKLtasK6cr0wsEPv7d9X0Fhw+m59bt+Q==",
+      "path": "microsoft.aspnetcore.authentication.oauth/2.3.0",
+      "hashPath": "microsoft.aspnetcore.authentication.oauth.2.3.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Authentication.Twitter/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1912,6 +1934,13 @@
       "sha512": "sha512-YqueG52R/Xej4VVbKuRIodjiAhV0HR/XVbLbNrJhCZnzjnSjgMJ/dCdV0akQQxavX6hp/LC6rqLGLcXeQYU7XA==",
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "path": "newtonsoft.json/11.0.2",
+      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
     },
     "System.Buffers/4.6.0": {
       "type": "package",

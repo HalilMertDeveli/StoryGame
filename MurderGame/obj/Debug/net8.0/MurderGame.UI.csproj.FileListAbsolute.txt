@@ -194,3 +194,4 @@ C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame\bin\Debug\net8
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Twitter.dll
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame\bin\Debug\net8.0\Newtonsoft.Json.dll

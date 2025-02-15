@@ -216,6 +216,23 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.AspNetCore.Authentication.OAuth/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication": "2.3.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.OAuth.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.OAuth.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication.Twitter/8.0.0": {
         "type": "package",
         "compile": {
@@ -1548,6 +1565,19 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Buffers/4.6.0": {
         "type": "package",
         "compile": {
@@ -2483,6 +2513,19 @@
         "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.xml",
         "microsoft.aspnetcore.authentication.google.8.0.0.nupkg.sha512",
         "microsoft.aspnetcore.authentication.google.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.OAuth/2.3.0": {
+      "sha512": "ph4A+Y3v2r5pYynyXl1fy7EELydm/EClMhTjhvYmIQy6yeo1uN1RwyXKLtasK6cr0wsEPv7d9X0Fhw+m59bt+Q==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.oauth/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.OAuth.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.OAuth.xml",
+        "microsoft.aspnetcore.authentication.oauth.2.3.0.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.oauth.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.Twitter/8.0.0": {
@@ -4734,6 +4777,36 @@
         "readme.md"
       ]
     },
+    "Newtonsoft.Json/11.0.2": {
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
     "System.Buffers/4.6.0": {
       "sha512": "lN6tZi7Q46zFzAbRYXTIvfXcyvQQgxnY7Xm6C6xQ9784dEL1amjM6S6Iw4ZpsvesAKnRVsM4scrDQaDqSClkjA==",
       "type": "package",
@@ -6046,6 +6119,7 @@
       "FluentValidation.AspNetCore >= 11.3.0",
       "Microsoft.AspNetCore.Authentication.Facebook >= 8.0.0",
       "Microsoft.AspNetCore.Authentication.Google >= 8.0.0",
+      "Microsoft.AspNetCore.Authentication.OAuth >= 2.3.0",
       "Microsoft.AspNetCore.Authentication.Twitter >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.1",
       "MurderGame.Business >= 1.0.0",
@@ -6133,6 +6207,10 @@
           "Microsoft.AspNetCore.Authentication.Google": {
             "target": "Package",
             "version": "[8.0.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.OAuth": {
+            "target": "Package",
+            "version": "[2.3.0, )"
           },
           "Microsoft.AspNetCore.Authentication.Twitter": {
             "target": "Package",

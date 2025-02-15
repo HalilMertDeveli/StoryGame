@@ -1,9 +1,18 @@
-﻿using FluentValidation;
+﻿using System.Net.Http.Headers;
+using System.Security.Claims;
+using System.Text.Json;
+using FluentValidation;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MurderGame.Business.DependencyResolvers.Microsoft;
-using MurderGame.Business.Services;
+using MurderGame.Business.Services.Email;
+using MurderGame.Business.Services.Facebook;
+using MurderGame.Business.Services.Github;
+using MurderGame.Business.Services.Google;
+using MurderGame.Business.Services.Twitter;
 using MurderGame.Business.ValidationRules;
 using MurderGame.DataAccess.Context;
 using MurderGame.Entities.Domains;
@@ -19,7 +28,8 @@ namespace MurderGame
             builder.Services.AddScoped<GoogleSingInUpService>();
             builder.Services.AddScoped<FacebookSignUpService>();
             builder.Services.AddScoped<TwitterSignUpService>();
-
+            builder.Services.AddScoped<GitHubSignInService>();
+            builder.Services.AddScoped<GitHubSignUpService>();
 
             // Add services to the container
             builder.Services.AddControllersWithViews();
@@ -41,29 +51,92 @@ namespace MurderGame
 
             //google things
             builder.Services.AddAuthentication(options =>
-                {
-                    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                })
-                .AddCookie() // Cookie authentication is required for external logins
-                .AddGoogle(googleOptions =>
-                {
-                    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? "default-client-id";
-                    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? "default-client-secret";
-                    googleOptions.CallbackPath = "/signin-google";
-                })
-                .AddTwitter(twitterOptions =>
-                {
-                    twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerKey"] ?? "default-consumer-key";
-                    twitterOptions.ConsumerSecret = builder.Configuration["Authentication:Twitter:ConsumerSecret"] ?? "default-consumer-secret";
-                    twitterOptions.RetrieveUserDetails = true;
-                })
-                .AddFacebook(facebookOptions =>
-                {
-                    facebookOptions.AppId = builder.Configuration["Authentication:Facebook:AppId"];
-                    facebookOptions.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
-                    facebookOptions.CallbackPath = "/signin-facebook";
-                });
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+    .AddCookie() // Cookie authentication is required for external logins
+    .AddGoogle(googleOptions =>
+    {
+        googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? "default-client-id";
+        googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? "default-client-secret";
+        googleOptions.CallbackPath = "/signin-google";
+    })
+    .AddTwitter(twitterOptions =>
+    {
+        twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerKey"] ?? "default-consumer-key";
+        twitterOptions.ConsumerSecret = builder.Configuration["Authentication:Twitter:ConsumerSecret"] ?? "default-consumer-secret";
+        twitterOptions.RetrieveUserDetails = true;
+    })
+    .AddFacebook(facebookOptions =>
+    {
+        facebookOptions.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+        facebookOptions.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+        facebookOptions.CallbackPath = "/signin-facebook";
+    })
+    .AddOAuth("GitHub", githubOptions =>
+    {
+        githubOptions.ClientId = builder.Configuration["Authentication:GitHub:ClientId"];
+        githubOptions.ClientSecret = builder.Configuration["Authentication:GitHub:ClientSecret"];
+        githubOptions.CallbackPath = new PathString("/signin-github");
 
+        githubOptions.AuthorizationEndpoint = "https://github.com/login/oauth/authorize";
+        githubOptions.TokenEndpoint = "https://github.com/login/oauth/access_token";
+        githubOptions.UserInformationEndpoint = "https://api.github.com/user";
+
+        githubOptions.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
+        githubOptions.ClaimActions.MapJsonKey(ClaimTypes.Name, "login");
+        githubOptions.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
+        githubOptions.ClaimActions.MapJsonKey("avatar_url", "avatar_url");
+        githubOptions.Scope.Add("user:email");  // 🔹 Email bilgisi talep ediliyor.
+
+
+        githubOptions.SaveTokens = true;
+
+        githubOptions.Events = new OAuthEvents
+        {
+            OnCreatingTicket = async context =>
+            {
+                var request = new HttpRequestMessage(HttpMethod.Get, context.Options.UserInformationEndpoint);
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", context.AccessToken);
+                request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var response = await context.Backchannel.SendAsync(request);
+                response.EnsureSuccessStatusCode();
+
+                var user = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
+                context.RunClaimActions(user.RootElement);
+
+                // Email kontrolü
+                var email = user.RootElement.TryGetProperty("email", out var emailProperty) ? emailProperty.GetString() : null;
+
+                if (string.IsNullOrEmpty(email))
+                {
+                    // Ek istekle email al
+                    var emailRequest = new HttpRequestMessage(HttpMethod.Get, "https://api.github.com/user/emails");
+                    emailRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", context.AccessToken);
+                    emailRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var emailResponse = await context.Backchannel.SendAsync(emailRequest);
+                    emailResponse.EnsureSuccessStatusCode();
+
+                    var emails = JsonDocument.Parse(await emailResponse.Content.ReadAsStringAsync());
+                    var primaryEmail = emails.RootElement.EnumerateArray().FirstOrDefault(e => e.GetProperty("primary").GetBoolean()).GetProperty("email").GetString();
+
+                    if (!string.IsNullOrEmpty(primaryEmail))
+                    {
+                        context.Identity.AddClaim(new Claim(ClaimTypes.Email, primaryEmail));
+                    }
+                    else
+                    {
+                        throw new Exception("Email bilgisi alınamadı.");
+                    }
+                }
+            }
+        };
+
+
+
+    });
 
 
 

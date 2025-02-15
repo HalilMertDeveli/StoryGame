@@ -43,6 +43,13 @@
                                             </ul>
                                         </div>
                                     }
+                                    @if (TempData["ErrorMessage"] != null)
+                                    {
+                                        <div class="alert alert-danger">
+                                            @TempData["ErrorMessage"]
+                                        </div>
+                                    }
+
 
                                     <div class="form-outline mb-4">
                                         <input asp-for="UserNickName" class="form-control" />
@@ -81,37 +88,30 @@
 
                                     <!-- Sosyal Medya Butonları -->
                                     <div class="text-center social-buttons mt-5">
-                                        <p>veya aşağıdakilerle giriş yap:</p>
+                                        <p>veya aşağıdakilerle kayıt ol:</p>
                                         <div class="btn-group">
                                             <!-- Facebook -->
                                             <a asp-controller="Home" asp-action="FacebookSignUp" class="btn btn-link btn-floating">
                                                 <i class="fab fa-facebook-f"></i> Facebook ile Kayıt Ol
                                             </a>
 
-
                                             <!-- Google -->
                                             <a asp-controller="Home" asp-action="GoogleSignUp" class="btn btn-link btn-floating">
-                                                <i class="fab fa-google"></i>
+                                                <i class="fab fa-google"></i> Google ile Kayıt Ol
                                             </a>
 
                                             <!-- Twitter -->
-                                            <div class="text-center social-buttons mt-5">
-                                                <p>veya aşağıdakilerle giriş yap:</p>
-                                                <div class="btn-group">
-                                                    <!-- Diğer Sosyal Medya Butonları -->
-                                                    <a asp-controller="Home" asp-action="TwitterLogin" class="btn btn-floating btn-twitter">
-                                                        <i class="fab fa-twitter"></i> Twitter ile Giriş Yap
-                                                    </a>
-                                                </div>
-                                            </div>
-
+                                            <a asp-controller="Home" asp-action="TwitterLogin" class="btn btn-floating">
+                                                <i class="fab fa-twitter"></i> Twitter ile Kayıt Ol
+                                            </a>
 
                                             <!-- GitHub -->
-                                            <a href="#" class="btn btn-link btn-floating">
-                                                <i class="fab fa-github"></i>
+                                            <a asp-controller="Home" asp-action="GitHubSignUp" class="btn btn-link btn-floating">
+                                                <i class="fab fa-github"></i> GitHub ile Kayıt Ol
                                             </a>
                                         </div>
                                     </div>
+
 
                                 </form>
                             </div>

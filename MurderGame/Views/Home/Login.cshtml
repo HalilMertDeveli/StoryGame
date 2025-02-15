@@ -26,6 +26,12 @@
                                     <strong>Hata!</strong> @ViewData.ModelState[string.Empty]?.Errors.FirstOrDefault()?.ErrorMessage
                                 </div>
                             }
+                            @if (TempData["ErrorMessage"] != null)
+                            {
+                                <div class="alert alert-danger">
+                                    @TempData["ErrorMessage"]
+                                </div>
+                            }
 
                             <!-- Kullanıcı Adı veya E-Posta -->
                             <div class="form-outline mb-4">
@@ -52,32 +58,31 @@
                                 <button type="submit" class="btn btn-info btn-lg btn-block">Giriş Yap</button>
                             </div>
 
-                            <!-- Alternatif Giriş Seçenekleri -->
-                            <div class="text-center">
+                            <div class="text-center social-buttons mt-5">
                                 <p>veya aşağıdakilerle giriş yap:</p>
                                 <div class="btn-group">
+                                    <!-- Facebook -->
                                     <a asp-controller="Home" asp-action="FacebookLogin" class="btn btn-link btn-floating">
                                         <i class="fab fa-facebook-f"></i> Facebook ile Giriş Yap
                                     </a>
 
-                                    <a asp-controller="Home" asp-action="GoogleLogin" class="btn btn-floating">
+                                    <!-- Google -->
+                                    <a asp-controller="Home" asp-action="GoogleLogin" class="btn btn-link btn-floating">
                                         <i class="fab fa-google"></i> Google ile Giriş Yap
                                     </a>
-                                    <div class="text-center social-buttons mt-5">
-                                        <p>veya aşağıdakilerle giriş yap:</p>
-                                        <div class="btn-group">
-                                            <!-- Diğer Sosyal Medya Butonları -->
-                                            <a asp-controller="Home" asp-action="TwitterLogin" class="btn btn-floating btn-twitter">
-                                                <i class="fab fa-twitter"></i> Twitter ile Giriş Yap
-                                            </a>
-                                        </div>
-                                    </div>
 
-                                    <a href="#" class="btn btn-floating">
+                                    <!-- Twitter -->
+                                    <a asp-controller="Home" asp-action="TwitterLogin" class="btn btn-link btn-floating">
+                                        <i class="fab fa-twitter"></i> Twitter ile Giriş Yap
+                                    </a>
+
+                                    <!-- GitHub -->
+                                    <a asp-controller="Home" asp-action="GitHubLogin" class="btn btn-link btn-floating">
                                         <i class="fab fa-github"></i> GitHub ile Giriş Yap
                                     </a>
                                 </div>
                             </div>
+
 
                             <!-- Kayıt Ol Linki -->
                             <p class="mt-3" style="color: #d3d3d3; font-size: 18px;">
