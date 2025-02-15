@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MurderGame.Business.DependencyResolvers.Microsoft;
@@ -15,8 +16,8 @@ namespace MurderGame
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddScoped<LoginService>();
-
+            builder.Services.AddScoped<GoogleSingInUpService>();
+            builder.Services.AddScoped<FacebookSignUpService>();
 
             // Add services to the container
             builder.Services.AddControllersWithViews();
@@ -36,6 +37,7 @@ namespace MurderGame
             builder.Services.AddValidatorsFromAssemblyContaining<SingUpDtoValidator>();
             builder.Services.AddScoped<SignUpService>();
 
+            //google things
             builder.Services.AddAuthentication()
                 .AddGoogle(googleOptions =>
                 {
@@ -44,6 +46,19 @@ namespace MurderGame
                     googleOptions.CallbackPath = "/signin-google"; // Bu path'e Google callback yapar
                     //yaprık
                 });
+
+            //facebook login
+            builder.Services.AddAuthentication(options =>
+                {
+                    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                })
+                .AddFacebook(facebookOptions =>
+                {
+                    facebookOptions.AppId = builder.Configuration["Authentication:Facebook:ClientId"];
+                    facebookOptions.AppSecret = builder.Configuration["Authentication:Facebook:ClientSecret"];
+                    facebookOptions.CallbackPath = "/signin-facebook";  // Bu path'e Facebook callback yapacak
+                });
+            
 
 
             var app = builder.Build();

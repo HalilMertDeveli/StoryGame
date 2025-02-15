@@ -16,17 +16,20 @@ namespace MurderGame.Controllers
         private readonly SignUpService _signUpService;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly LoginService _loginService;
+        private readonly GoogleSingInUpService _loginService;
+        private readonly FacebookSignUpService _facebookSignUpService;
+
 
         public HomeController(ILogger<HomeController> logger, SignUpService signUpService,
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager, LoginService loginService)
+            SignInManager<ApplicationUser> signInManager, GoogleSingInUpService loginService, FacebookSignUpService facebookSignUpService)
         {
             _logger = logger;
             _signUpService = signUpService;
             _userManager = userManager;
             _signInManager = signInManager;
             _loginService = loginService;
+            _facebookSignUpService = facebookSignUpService;
         }
 
 
@@ -111,6 +114,58 @@ namespace MurderGame.Controllers
             ModelState.AddModelError(string.Empty, "E-posta veya şifre hatalı. Lütfen tekrar deneyin.");
             return View(loginDto);
         }
+
+        [HttpGet]
+        public IActionResult FacebookSignUp()
+        {
+            var redirectUrl = Url.Action("FacebookCallback", "Home");
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Facebook", redirectUrl);
+            return Challenge(properties, "Facebook");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> FacebookCallback()
+        {
+            var info = await _signInManager.GetExternalLoginInfoAsync();
+            if (info == null) return RedirectToAction("Login");
+
+            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+            var name = info.Principal.FindFirstValue(ClaimTypes.Name);
+
+            // Kullanıcıyı kontrol et ve yoksa kaydet
+            var user = await _facebookSignUpService.HandleFacebookSignUpAsync(email, name);
+
+            // Kullanıcıyı giriş yaptır
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            return RedirectToAction("Index", "Member");
+        }
+
+        [HttpGet]
+        public IActionResult FacebookLogin()
+        {
+            var redirectUrl = Url.Action("FacebookLoginCallback", "Home");
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Facebook", redirectUrl);
+            return Challenge(properties, "Facebook");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> FacebookLoginCallback()
+        {
+            var info = await _signInManager.GetExternalLoginInfoAsync();
+            if (info == null) return RedirectToAction("Login");
+
+            // info.LoginProvider ve info.ProviderKey'i al ve metodu doğru şekilde çağır
+            var user = await _facebookSignUpService.HandleFacebookLoginAsync(info.LoginProvider, info.ProviderKey);
+
+            if (user != null)
+            {
+                await _signInManager.SignInAsync(user, isPersistent: false);
+                return RedirectToAction("Index", "Member");
+            }
+
+            return RedirectToAction("Login");
+        }
+
 
 
 
