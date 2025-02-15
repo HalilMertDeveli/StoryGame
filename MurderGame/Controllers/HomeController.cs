@@ -18,11 +18,12 @@ namespace MurderGame.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly GoogleSingInUpService _loginService;
         private readonly FacebookSignUpService _facebookSignUpService;
+        private readonly TwitterSignUpService _twitterSignUpService;
 
 
         public HomeController(ILogger<HomeController> logger, SignUpService signUpService,
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager, GoogleSingInUpService loginService, FacebookSignUpService facebookSignUpService)
+            SignInManager<ApplicationUser> signInManager, GoogleSingInUpService loginService, FacebookSignUpService facebookSignUpService, TwitterSignUpService twitterSignUpService)
         {
             _logger = logger;
             _signUpService = signUpService;
@@ -30,6 +31,7 @@ namespace MurderGame.Controllers
             _signInManager = signInManager;
             _loginService = loginService;
             _facebookSignUpService = facebookSignUpService;
+            _twitterSignUpService = twitterSignUpService;
         }
 
 
@@ -166,6 +168,30 @@ namespace MurderGame.Controllers
             return RedirectToAction("Login");
         }
 
+        [HttpGet]
+        public IActionResult TwitterLogin()
+        {
+            var redirectUrl = Url.Action("TwitterCallback", "Home");
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Twitter", redirectUrl);
+            return Challenge(properties, "Twitter");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> TwitterCallback()
+        {
+            var info = await _signInManager.GetExternalLoginInfoAsync();
+            if (info == null) return RedirectToAction("Login");
+
+            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+            var name = info.Principal.FindFirstValue(ClaimTypes.Name);
+
+            // Kullanıcıyı kontrol et ve yoksa kaydet
+            var user = await _twitterSignUpService.HandleTwitterSignUpAsync(email, name);
+
+            // Kullanıcıyı giriş yaptır
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            return RedirectToAction("Index", "Member");
+        }
 
 
 

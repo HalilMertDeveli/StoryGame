@@ -18,6 +18,8 @@ namespace MurderGame
 
             builder.Services.AddScoped<GoogleSingInUpService>();
             builder.Services.AddScoped<FacebookSignUpService>();
+            builder.Services.AddScoped<TwitterSignUpService>();
+
 
             // Add services to the container
             builder.Services.AddControllersWithViews();
@@ -38,27 +40,32 @@ namespace MurderGame
             builder.Services.AddScoped<SignUpService>();
 
             //google things
-            builder.Services.AddAuthentication()
-                .AddGoogle(googleOptions =>
-                {
-                    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? "sad"; // Google API ClientId
-                    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? "sad"; // Google API ClientSecret
-                    googleOptions.CallbackPath = "/signin-google"; // Bu path'e Google callback yapar
-                    //yaprık
-                });
-
-            //facebook login
             builder.Services.AddAuthentication(options =>
                 {
                     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 })
+                .AddCookie() // Cookie authentication is required for external logins
+                .AddGoogle(googleOptions =>
+                {
+                    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? "default-client-id";
+                    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? "default-client-secret";
+                    googleOptions.CallbackPath = "/signin-google";
+                })
+                .AddTwitter(twitterOptions =>
+                {
+                    twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerKey"] ?? "default-consumer-key";
+                    twitterOptions.ConsumerSecret = builder.Configuration["Authentication:Twitter:ConsumerSecret"] ?? "default-consumer-secret";
+                    twitterOptions.RetrieveUserDetails = true;
+                })
                 .AddFacebook(facebookOptions =>
                 {
-                    facebookOptions.AppId = builder.Configuration["Authentication:Facebook:ClientId"];
-                    facebookOptions.AppSecret = builder.Configuration["Authentication:Facebook:ClientSecret"];
-                    facebookOptions.CallbackPath = "/signin-facebook";  // Bu path'e Facebook callback yapacak
+                    facebookOptions.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+                    facebookOptions.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+                    facebookOptions.CallbackPath = "/signin-facebook";
                 });
-            
+
+
+
 
 
             var app = builder.Build();

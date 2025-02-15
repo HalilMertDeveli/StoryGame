@@ -63,9 +63,16 @@
                                     <a asp-controller="Home" asp-action="GoogleLogin" class="btn btn-floating">
                                         <i class="fab fa-google"></i> Google ile Giriş Yap
                                     </a>
-                                    <a href="#" class="btn btn-floating">
-                                        <i class="fab fa-twitter"></i> Twitter ile Giriş Yap
-                                    </a>
+                                    <div class="text-center social-buttons mt-5">
+                                        <p>veya aşağıdakilerle giriş yap:</p>
+                                        <div class="btn-group">
+                                            <!-- Diğer Sosyal Medya Butonları -->
+                                            <a asp-controller="Home" asp-action="TwitterLogin" class="btn btn-floating btn-twitter">
+                                                <i class="fab fa-twitter"></i> Twitter ile Giriş Yap
+                                            </a>
+                                        </div>
+                                    </div>
+
                                     <a href="#" class="btn btn-floating">
                                         <i class="fab fa-github"></i> GitHub ile Giriş Yap
                                     </a>
