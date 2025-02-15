@@ -144,6 +144,7 @@ namespace MurderGame.Controllers
                 return RedirectToAction("Login");
             }
 
+            // Kullanıcıyı loginProvider ve providerKey ile kontrol et
             var user = await _gitHubSignInService.HandleGitHubLoginAsync(loginProvider, providerKey);
 
             if (user != null)
@@ -152,9 +153,35 @@ namespace MurderGame.Controllers
                 return RedirectToAction("Index", "Member");
             }
 
-            TempData["ErrorMessage"] = "Giriş yapılamadı. Kullanıcı kaydı bulunamadı.";
-            return RedirectToAction("Login");
+            // Kullanıcı bulunamadı, yeni bir kayıt oluşturmayı dene
+            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+            var name = info.Principal.FindFirstValue(ClaimTypes.Name) ?? "GitHubUser";
+
+            if (string.IsNullOrEmpty(email))
+            {
+                email = $"{name}@github.com";  // Geçici email
+            }
+
+            try
+            {
+                user = await _gitHubSignUpService.HandleGitHubSignUpAsync(email, name);
+
+                if (user == null)
+                {
+                    TempData["ErrorMessage"] = "Kullanıcı kaydı başarısız oldu.";
+                    return RedirectToAction("Login");
+                }
+
+                await _signInManager.SignInAsync(user, isPersistent: false);
+                return RedirectToAction("Index", "Member");
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction("Login");
+            }
         }
+
 
         // ---------- Other Actions ----------
         public IActionResult Index() => View();
