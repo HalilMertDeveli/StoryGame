@@ -85,12 +85,9 @@ namespace MurderGame
 
         githubOptions.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
         githubOptions.ClaimActions.MapJsonKey(ClaimTypes.Name, "login");
-        githubOptions.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
         githubOptions.ClaimActions.MapJsonKey("avatar_url", "avatar_url");
-        githubOptions.Scope.Add("user:email");  // 🔹 Email bilgisi talep ediliyor.
 
-
-        githubOptions.SaveTokens = true;
+        githubOptions.Scope.Add("user:email");  // 🔹 Eklendi: GitHub'dan email alabilmek için kapsam eklendi.
 
         githubOptions.Events = new OAuthEvents
         {
@@ -106,12 +103,10 @@ namespace MurderGame
                 var user = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
                 context.RunClaimActions(user.RootElement);
 
-                // Email kontrolü
                 var email = user.RootElement.TryGetProperty("email", out var emailProperty) ? emailProperty.GetString() : null;
 
-                if (string.IsNullOrEmpty(email))
+                if (string.IsNullOrEmpty(email))  // 🔹 Eklendi: Email boşsa ek istek yap.
                 {
-                    // Ek istekle email al
                     var emailRequest = new HttpRequestMessage(HttpMethod.Get, "https://api.github.com/user/emails");
                     emailRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", context.AccessToken);
                     emailRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -124,11 +119,11 @@ namespace MurderGame
 
                     if (!string.IsNullOrEmpty(primaryEmail))
                     {
-                        context.Identity.AddClaim(new Claim(ClaimTypes.Email, primaryEmail));
+                        context.Identity.AddClaim(new Claim(ClaimTypes.Email, primaryEmail));  // 🔹 Email bilgisi başarıyla alındı.
                     }
                     else
                     {
-                        throw new Exception("Email bilgisi alınamadı.");
+                        throw new Exception("Email bilgisi alınamadı.");  // 🔹 Hata fırlatıldı.
                     }
                 }
             }
