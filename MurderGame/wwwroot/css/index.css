@@ -8,14 +8,18 @@
     max-width: 1550px;
 }
 
-
-
+/* Arka plan resmini tam ekran kaplayacak şekilde hizalama */
 .background-img {
     background-image: url("../Images/Index/index_walpaper.png");
-    width: 100%;
-    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center; /* 🔹 Resmi tam ortaya hizalar */
+    width: 100vw; /* 🔹 Sayfanın tamamını kaplasın */
+    height: 100vh; /* 🔹 Ekranın tamamını kaplasın */
+    position: absolute; /* 🔹 Sayfanın arka planında sabit dursun */
+    top: 0;
+    left: 0;
+    z-index: -1; /* 🔹 İçeriğin altında kalmasını sağlar */
 }
 
 .nav-item {
@@ -23,7 +27,6 @@
     font-weight: 500;
     padding: 10px 20px;
 }
-
 
 .nav-link {
     color: #977F5D;

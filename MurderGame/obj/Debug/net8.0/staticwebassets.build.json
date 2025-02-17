@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/uVXHxSDgGIPfcujjgGFd9grkPxiFkrGssJeJFJSpuI=",
+  "Hash": "Li++hnqkSyUGeH2xXffdIbU4YrpyHR9Zof/xNQEypI4=",
   "Source": "MurderGame.UI",
   "BasePath": "_content/MurderGame.UI",
   "Mode": "Default",
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "un2zhto5hl",
-      "Integrity": "Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk=",
+      "Fingerprint": "lqepqru442",
+      "Integrity": "I2PbX9pF/ubGkJOJEnyiYcfmaZwkWKIK4itOp874gxg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
@@ -136,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fuq4nlfeu2",
-      "Integrity": "GUQQ/MTQFCfR/gkQaXfpg9miDjEjUGOnOSNDxtSaqjg=",
+      "Fingerprint": "o1egjsumsv",
+      "Integrity": "HO5x7UDgNhg1cQyQpu7kQ4mX8bO/k6E5zu41+vswuPw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Singup.css"
@@ -1761,7 +1761,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 14:15:07 GMT"
+          "Value": "Mon, 17 Feb 2025 14:55:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1798,7 +1798,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 14:15:07 GMT"
+          "Value": "Mon, 17 Feb 2025 14:55:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1831,7 +1831,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "651"
+          "Value": "2286"
         },
         {
           "Name": "Content-Type",
@@ -1839,11 +1839,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk=\""
+          "Value": "\"I2PbX9pF/ubGkJOJEnyiYcfmaZwkWKIK4itOp874gxg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 14 Feb 2025 14:31:03 GMT"
+          "Value": "Mon, 17 Feb 2025 14:46:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1853,12 +1853,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk="
+          "Value": "sha256-I2PbX9pF/ubGkJOJEnyiYcfmaZwkWKIK4itOp874gxg="
         }
       ]
     },
     {
-      "Route": "css/login.un2zhto5hl.css",
+      "Route": "css/login.lqepqru442.css",
       "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\login.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1868,7 +1868,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "651"
+          "Value": "2286"
         },
         {
           "Name": "Content-Type",
@@ -1876,11 +1876,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk=\""
+          "Value": "\"I2PbX9pF/ubGkJOJEnyiYcfmaZwkWKIK4itOp874gxg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 14 Feb 2025 14:31:03 GMT"
+          "Value": "Mon, 17 Feb 2025 14:46:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1890,7 +1890,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "un2zhto5hl"
+          "Value": "lqepqru442"
         },
         {
           "Name": "label",
@@ -1898,7 +1898,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk="
+          "Value": "sha256-I2PbX9pF/ubGkJOJEnyiYcfmaZwkWKIK4itOp874gxg="
         }
       ]
     },
@@ -1913,7 +1913,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1241"
+          "Value": "2663"
         },
         {
           "Name": "Content-Type",
@@ -1921,11 +1921,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GUQQ/MTQFCfR/gkQaXfpg9miDjEjUGOnOSNDxtSaqjg=\""
+          "Value": "\"HO5x7UDgNhg1cQyQpu7kQ4mX8bO/k6E5zu41+vswuPw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 15:13:08 GMT"
+          "Value": "Mon, 17 Feb 2025 14:40:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1935,12 +1935,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-GUQQ/MTQFCfR/gkQaXfpg9miDjEjUGOnOSNDxtSaqjg="
+          "Value": "sha256-HO5x7UDgNhg1cQyQpu7kQ4mX8bO/k6E5zu41+vswuPw="
         }
       ]
     },
     {
-      "Route": "css/Singup.fuq4nlfeu2.css",
+      "Route": "css/Singup.o1egjsumsv.css",
       "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Singup.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1950,7 +1950,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1241"
+          "Value": "2663"
         },
         {
           "Name": "Content-Type",
@@ -1958,11 +1958,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GUQQ/MTQFCfR/gkQaXfpg9miDjEjUGOnOSNDxtSaqjg=\""
+          "Value": "\"HO5x7UDgNhg1cQyQpu7kQ4mX8bO/k6E5zu41+vswuPw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 15:13:08 GMT"
+          "Value": "Mon, 17 Feb 2025 14:40:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1972,7 +1972,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fuq4nlfeu2"
+          "Value": "o1egjsumsv"
         },
         {
           "Name": "label",
@@ -1980,7 +1980,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-GUQQ/MTQFCfR/gkQaXfpg9miDjEjUGOnOSNDxtSaqjg="
+          "Value": "sha256-HO5x7UDgNhg1cQyQpu7kQ4mX8bO/k6E5zu41+vswuPw="
         }
       ]
     },

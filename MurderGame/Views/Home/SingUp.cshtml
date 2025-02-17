@@ -9,16 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="~/css/Singup.css" asp-append-version="true" />
     <title>Sign Up</title>
-    <style>
-        .error-card {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-    </style>
+   
 </head>
 <body>
     <section>
@@ -91,25 +82,34 @@
                                         <p>veya aşağıdakilerle kayıt ol:</p>
                                         <div class="btn-group">
                                             <!-- Facebook -->
-                                            <a asp-controller="Home" asp-action="FacebookSignUp" class="btn btn-link btn-floating">
-                                                <i class="fab fa-facebook-f"></i> Facebook ile Kayıt Ol
+                                            <a asp-controller="Home" asp-action="FacebookSignUp" class="btn-social">
+                                                <i class="fab fa-facebook-f"></i> Facebook ile Kayıt
                                             </a>
 
                                             <!-- Google -->
-                                            <a asp-controller="Home" asp-action="GoogleSignUp" class="btn btn-link btn-floating">
-                                                <i class="fab fa-google"></i> Google ile Kayıt Ol
+                                            <a asp-controller="Home" asp-action="GoogleSignUp" class="btn-social">
+                                                <i class="fab fa-google"></i> Google ile Kayıt
                                             </a>
 
                                             <!-- Twitter -->
-                                            <a asp-controller="Home" asp-action="TwitterLogin" class="btn btn-floating">
-                                                <i class="fab fa-twitter"></i> Twitter ile Kayıt Ol
+                                            <a asp-controller="Home" asp-action="TwitterLogin" class="btn-social">
+                                                <i class="fab fa-twitter"></i> Twitter ile Kayıt
                                             </a>
 
                                             <!-- GitHub -->
-                                            <a asp-controller="Home" asp-action="GitHubSignUp" class="btn btn-link btn-floating">
-                                                <i class="fab fa-github"></i> GitHub ile Kayıt Ol
+                                            <a asp-controller="Home" asp-action="GitHubSignUp" class="btn-social">
+                                                <i class="fab fa-github"></i> GitHub ile Kayıt
                                             </a>
                                         </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <p class="login-redirect">
+                                            Zaten bir hesabın var mı? 
+                                            <a asp-controller="Home" asp-action="Login">Buradan giriş yap</a>
+                                        </p>
+
+
                                     </div>
 
 

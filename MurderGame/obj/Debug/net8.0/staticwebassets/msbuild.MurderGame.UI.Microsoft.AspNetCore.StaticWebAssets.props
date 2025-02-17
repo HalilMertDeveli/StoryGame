@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>un2zhto5hl</Fingerprint>
-      <Integrity>Ov12VUTmc5QmBiW1PsncT/PVTLxNZgNlZ+mhQeiUIEk=</Integrity>
+      <Fingerprint>lqepqru442</Fingerprint>
+      <Integrity>I2PbX9pF/ubGkJOJEnyiYcfmaZwkWKIK4itOp874gxg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\login.css'))</OriginalItemSpec>
@@ -66,8 +66,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>fuq4nlfeu2</Fingerprint>
-      <Integrity>GUQQ/MTQFCfR/gkQaXfpg9miDjEjUGOnOSNDxtSaqjg=</Integrity>
+      <Fingerprint>o1egjsumsv</Fingerprint>
+      <Integrity>HO5x7UDgNhg1cQyQpu7kQ4mX8bO/k6E5zu41+vswuPw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Singup.css'))</OriginalItemSpec>

@@ -1,8 +1,20 @@
-﻿.btn-group {
+﻿/* Sayfanın tamamını kaplayan arka plan resmi */
+body {
+    background: url('/Images/Login/back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh; /* Ekranın tamamını kaplasın */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.btn-group {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
+    gap: 10px; /* Butonlar arasındaki boşluğu ayarlar */
+    margin-top: 10px;
+    flex-wrap: wrap; /* Butonların taşması durumunda satır atlamasını sağlar */
 }
 
 .btn-floating {
@@ -26,3 +38,48 @@
         background-color: #0056b3; /* Hover efekti */
         transform: scale(1.05);
     }
+
+.btn-social {
+    display: flex;
+    align-items: center; /* İkon ve metni aynı hizaya getirir */
+    justify-content: center;
+    font-size: 14px; /* Yazıyı biraz küçülttüm */
+    padding: 10px 15px; /* Buton iç boşluğu */
+    border-radius: 5px; /* Hafif yuvarlak köşeler */
+    background-color: #f0f0f0; /* Arka plan rengi */
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #007bff;
+    transition: all 0.3s ease;
+    min-width: 150px; /* Buton genişliğini sabit tutar */
+}
+
+    /* İkonların boyutunu küçültme ve hizalama */
+    .btn-social i {
+        font-size: 18px; /* İkon boyutu */
+        margin-right: 8px; /* İkon ile metin arasına boşluk koyar */
+    }
+
+    /* Hover (Üzerine gelince renk değişimi) */
+    .btn-social:hover {
+        background-color: #e0e0e0;
+    }
+
+.redirect-links {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+    color: #333;
+}
+
+    .redirect-links a {
+        font-weight: bold;
+        color: #007bff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .redirect-links a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
