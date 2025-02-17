@@ -1,0 +1,28 @@
+﻿.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btn-floating {
+    font-size: 10px; /* Yazı boyutunu küçülttüm */
+    width: 180px; /* Sabit genişlik verdim */
+    height: 50px;
+    border-radius: 5px;
+    background-color: #007bff; /* Mavi arka plan rengi */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+    .btn-floating i {
+        margin-right: 10px;
+    }
+
+    .btn-floating:hover {
+        background-color: #0056b3; /* Hover efekti */
+        transform: scale(1.05);
+    }

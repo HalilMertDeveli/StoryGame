@@ -904,13 +904,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MurderGame.UI.rvq5m87ujl.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-V/3YXjI3ayRKQ7zUvYmcB3GK0DcXJT1Vwcb8tkCXprw="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022V/3YXjI3ayRKQ7zUvYmcB3GK0DcXJT1Vwcb8tkCXprw=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Feb 2025 14:50:11 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022V/3YXjI3ayRKQ7zUvYmcB3GK0DcXJT1Vwcb8tkCXprw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Feb 2025 16:09:47 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MurderGame.UI/MurderGame.UI.rvq5m87ujl.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MurderGame.UI.rvq5m87ujl.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rvq5m87ujl"},{"Name":"integrity","Value":"sha256-V/3YXjI3ayRKQ7zUvYmcB3GK0DcXJT1Vwcb8tkCXprw="},{"Name":"label","Value":"_content/MurderGame.UI/MurderGame.UI.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022V/3YXjI3ayRKQ7zUvYmcB3GK0DcXJT1Vwcb8tkCXprw=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Feb 2025 14:50:11 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022V/3YXjI3ayRKQ7zUvYmcB3GK0DcXJT1Vwcb8tkCXprw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Feb 2025 16:09:47 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MurderGame.UI/uploads/Screenshot 2025-02-04 210554.d6ztf93kue.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\Screenshot 2025-02-04 210554.png'))</AssetFile>

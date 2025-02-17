@@ -35,8 +35,16 @@ namespace MurderGame
             builder.Services.AddControllersWithViews();
 
             // Database Context and Identity Configuration
+            //builder.Services.AddDbContext<AppDbContext>(options =>
+            //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), sqlServerOptions =>
+                    sqlServerOptions.EnableRetryOnFailure(
+                        maxRetryCount: 5,
+                        maxRetryDelay: TimeSpan.FromSeconds(10),
+                        errorNumbersToAdd: null)
+                ));
+
 
             builder.Services.AddIdentity<ApplicationUser, Role>()
                 .AddEntityFrameworkStores<AppDbContext>()
@@ -103,6 +111,7 @@ namespace MurderGame
                 var user = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
                 context.RunClaimActions(user.RootElement);
 
+
                 var email = user.RootElement.TryGetProperty("email", out var emailProperty) ? emailProperty.GetString() : null;
 
                 if (string.IsNullOrEmpty(email))  // 🔹 Eklendi: Email boşsa ek istek yap.
@@ -115,6 +124,7 @@ namespace MurderGame
                     emailResponse.EnsureSuccessStatusCode();
 
                     var emails = JsonDocument.Parse(await emailResponse.Content.ReadAsStringAsync());
+                    //email burada
                     var primaryEmail = emails.RootElement.EnumerateArray().FirstOrDefault(e => e.GetProperty("primary").GetBoolean()).GetProperty("email").GetString();
 
                     if (!string.IsNullOrEmpty(primaryEmail))

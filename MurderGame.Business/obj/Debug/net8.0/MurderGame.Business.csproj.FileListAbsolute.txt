@@ -1,9 +1,3 @@
-C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.csproj.AssemblyReference.cache
-C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.AssemblyInfoInputs.cache
-C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.AssemblyInfo.cs
-C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.csproj.CoreCompileInputs.cache
-C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.sourcelink.json
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\bin\Debug\net8.0\MurderGame.Business.deps.json
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\bin\Debug\net8.0\MurderGame.Business.dll
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\bin\Debug\net8.0\MurderGame.Business.pdb
@@ -13,6 +7,12 @@ C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\bin\D
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\bin\Debug\net8.0\MurderGame.DataAccess.pdb
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\bin\Debug\net8.0\MurderGame.Dtos.pdb
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\bin\Debug\net8.0\MurderGame.Entities.pdb
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.csproj.AssemblyReference.cache
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.AssemblyInfoInputs.cache
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.AssemblyInfo.cs
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.csproj.CoreCompileInputs.cache
+C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.sourcelink.json
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGa.EA681BAA.Up2Date
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\MurderGame.Business.dll
 C:\Users\halil\source\repos\murder_game_asp\MurderGame\MurderGame.Business\obj\Debug\net8.0\refint\MurderGame.Business.dll
