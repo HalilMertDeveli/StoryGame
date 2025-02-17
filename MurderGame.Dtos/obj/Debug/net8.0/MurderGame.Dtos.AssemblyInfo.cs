@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MurderGame.Dtos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95681cc98f1049440a7b099d89162d6079d3a3a1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+643eb11a3d93da3bec5c7a0d994aef174adb1216")]
 [assembly: System.Reflection.AssemblyProductAttribute("MurderGame.Dtos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MurderGame.Dtos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
