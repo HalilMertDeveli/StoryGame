@@ -1,6 +1,7 @@
 wwwroot\css\forgotPassword.css
 wwwroot\css\index.css
 wwwroot\css\login.css
+wwwroot\css\Member\MemberIndex.css
 wwwroot\css\Singup.css
 wwwroot\css\site.css
 wwwroot\favicon.ico

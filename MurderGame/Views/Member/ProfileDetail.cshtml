@@ -1,0 +1,78 @@
+﻿@model MurderGame.Dtos.UserDtos.UserProfileDto
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profil detaylarını güncelleyin.">
+    <title>Profil Detayları</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/Profile/ProfileDetail.css" asp-append-version="true" />
+</head>
+<body>
+    <section>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Profil Bilgilerini Güncelle</h2>
+
+                            <!-- Hata Mesajları -->
+                            @if (!ViewData.ModelState.IsValid)
+                            {
+                                <div class="alert alert-danger">
+                                    <h5>Eksik veya hatalı bilgiler:</h5>
+                                    <ul>
+                                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                        {
+                                            <li>@error.ErrorMessage</li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                            @if (TempData["ErrorMessage"] != null)
+                            {
+                                <div class="alert alert-danger">
+                                    @TempData["ErrorMessage"]
+                                </div>
+                            }
+
+                            <form enctype="multipart/form-data" asp-controller="Member" asp-action="ProfileDetail" method="post">
+
+                                <!-- Görünen Ad (Display Name) -->
+                                <div class="form-outline mb-4">
+                                    <input asp-for="DisplayName" class="form-control" placeholder="Görünen Adınız" />
+                                    <label class="form-label" for="DisplayName">Görünen Ad</label>
+                                    <span asp-validation-for="DisplayName" class="text-danger"></span>
+                                </div>
+
+                                <!-- Doğum Tarihi -->
+                                <div class="form-outline mb-4">
+                                    <input asp-for="DateOfBirth" type="date" class="form-control" />
+                                    <label class="form-label" for="DateOfBirth">Doğum Tarihiniz</label>
+                                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                                </div>
+
+                                <!-- Konum (Location) -->
+                                <div class="form-outline mb-4">
+                                    <input asp-for="Location" class="form-control" placeholder="Konum (Şehir/Ülke)" />
+                                    <label class="form-label" for="Location">Konum</label>
+                                    <span asp-validation-for="Location" class="text-danger"></span>
+                                </div>
+
+                                <!-- Güncelle Butonu -->
+                                <button type="submit" class="btn btn-primary btn-block">Güncelle</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

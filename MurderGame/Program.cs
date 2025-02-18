@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MurderGame.Business.DependencyResolvers.Microsoft;
+using MurderGame.Business.Services;
 using MurderGame.Business.Services.Email;
 using MurderGame.Business.Services.Facebook;
 using MurderGame.Business.Services.Github;
@@ -30,6 +31,7 @@ namespace MurderGame
             builder.Services.AddScoped<TwitterSignUpService>();
             builder.Services.AddScoped<GitHubSignInService>();
             builder.Services.AddScoped<GitHubSignUpService>();
+            builder.Services.AddScoped<ProfileDetailService>();
 
             // Add services to the container
             builder.Services.AddControllersWithViews();

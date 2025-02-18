@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\Images\\login_atun.jpg"
     },
     {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Member\\MemberIndex.css",
+      "PackagePath": "staticwebassets\\css\\Member\\MemberIndex.css"
+    },
+    {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Singup.css",
       "PackagePath": "staticwebassets\\css\\Singup.css"
     },
