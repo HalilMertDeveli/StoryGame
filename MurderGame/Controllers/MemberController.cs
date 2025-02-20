@@ -82,6 +82,17 @@ namespace MurderGame.UI.Controllers
 
             return View(userProfile); // 📌 Doğru model gönderildi
         }
+        [HttpGet]
+        public IActionResult Payment()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Profile()
+        {
+            return View();
+        }
 
     }
 

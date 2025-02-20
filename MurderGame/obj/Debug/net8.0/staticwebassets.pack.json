@@ -53,6 +53,14 @@
       "PackagePath": "staticwebassets\\css\\Member\\MemberIndex.css"
     },
     {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Member\\Payment.css",
+      "PackagePath": "staticwebassets\\css\\Member\\Payment.css"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Member\\Profile.css",
+      "PackagePath": "staticwebassets\\css\\Member\\Profile.css"
+    },
+    {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Singup.css",
       "PackagePath": "staticwebassets\\css\\Singup.css"
     },
@@ -79,6 +87,10 @@
     {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\js\\Member\\MemberIndex.js",
       "PackagePath": "staticwebassets\\js\\Member\\MemberIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\js\\Member\\Profile.js",
+      "PackagePath": "staticwebassets\\js\\Member\\Profile.js"
     },
     {
       "Id": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\js\\site.js",

@@ -8,5 +8,6 @@ namespace MurderGame.UI.Controllers
         {
             return View();
         }
+       
     }
 }

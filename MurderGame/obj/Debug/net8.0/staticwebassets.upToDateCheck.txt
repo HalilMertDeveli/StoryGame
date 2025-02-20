@@ -2,6 +2,8 @@ wwwroot\css\forgotPassword.css
 wwwroot\css\index.css
 wwwroot\css\login.css
 wwwroot\css\Member\MemberIndex.css
+wwwroot\css\Member\Payment.css
+wwwroot\css\Member\Profile.css
 wwwroot\css\Singup.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
@@ -17,6 +19,7 @@ wwwroot\Images\Singup\sing_up_1.jpg
 wwwroot\Images\Singup\sing_up_4.jpg
 wwwroot\Images\Singup\sinn_up_2.jpg
 wwwroot\js\Member\MemberIndex.js
+wwwroot\js\Member\Profile.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

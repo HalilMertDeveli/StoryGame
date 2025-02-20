@@ -593,6 +593,7 @@ h1, .h1 {
     cursor: pointer;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
 
 .brand-logo {
     font-family: "Nunito", sans-serif;

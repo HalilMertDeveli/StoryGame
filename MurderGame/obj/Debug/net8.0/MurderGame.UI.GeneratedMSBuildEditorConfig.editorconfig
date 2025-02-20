@@ -60,6 +60,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/halil/source/repos/murder_game_asp/MurderGame/MurderGame/Views/Member/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFBheW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/murder_game_asp/MurderGame/MurderGame/Views/Member/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/halil/source/repos/murder_game_asp/MurderGame/MurderGame/Views/Member/ProfileDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFByb2ZpbGVEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
