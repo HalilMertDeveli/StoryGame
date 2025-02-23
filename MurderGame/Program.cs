@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Text.Json;
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OAuth;
@@ -32,9 +33,10 @@ namespace MurderGame
             builder.Services.AddScoped<GitHubSignInService>();
             builder.Services.AddScoped<GitHubSignUpService>();
             builder.Services.AddScoped<ProfileDetailService>();
-
+            builder.Services.AddValidatorsFromAssemblyContaining<UserProfileDtoValidator>();
             // Add services to the container
             builder.Services.AddControllersWithViews();
+            
 
             // Database Context and Identity Configuration
             //builder.Services.AddDbContext<AppDbContext>(options =>

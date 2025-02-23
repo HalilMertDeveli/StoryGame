@@ -331,6 +331,10 @@ namespace MurderGame.DataAccess.Migrations
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ProfilePicture")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");

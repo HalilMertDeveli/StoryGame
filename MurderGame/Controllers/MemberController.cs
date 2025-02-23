@@ -9,11 +9,11 @@ using MurderGame.DataAccess.Context;
 using MurderGame.Dtos.UserDtos;
 using MurderGame.Entities.Domains;
 using MurderGame.Entities.Domains.MurderGame.Entities.Domains;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MurderGame.UI.Controllers
 {
-   
-
     [Authorize(Roles = "Member")]
     public class MemberController : Controller
     {
@@ -34,9 +34,44 @@ namespace MurderGame.UI.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> ProfileDetail(UserProfileDto model)
+        [HttpGet]
+        public async Task<IActionResult> Profile()
         {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "Kullanıcı bulunamadı. Lütfen tekrar giriş yapın.";
+                return RedirectToAction("Login", "Home");
+            }
+
+            // Veritabanından entity'yi alın
+            var userProfileEntity = await _context.UserProfileDetailsTable.FirstOrDefaultAsync(x => x.UserId == user.Id);
+
+            // Entity'yi DTO'ya dönüştürün
+            UserProfileDto model = new UserProfileDto();
+            if (userProfileEntity != null)
+            {
+                model.DisplayName = userProfileEntity.DisplayName;
+                model.DateOfBirth = userProfileEntity.DateOfBirth;
+                model.Location = userProfileEntity.Location;
+                model.PhoneNumber = userProfileEntity.PhoneNumber;
+                // Eğer DTO'nuzda ek alanlar varsa burada atayabilirsiniz.
+            }
+            // Eğer entity bulunamazsa, boş bir DTO gönderilir.
+
+            return View(model);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Profile(UserProfileDto model)
+        {
+            // Öncelikle gelen modelin ASP.NET Core ModelState doğrulaması varsa kontrol edin
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             // Kullanıcıyı al
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
@@ -45,56 +80,24 @@ namespace MurderGame.UI.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
-            // Servisi çağır ve sonucu kontrol et
+            // Servis aracılığıyla FluentValidation uygulanıyor
             var result = await _profileDetailServiceInstance.HandleProfileUpdateAsync(model, user);
 
             if (!result.Success)
             {
-                ModelState.AddModelError("", result.Message);
-                return View(model);
+                // Validasyon hatalarını ModelState'e ekle
+                ModelState.AddModelError(string.Empty, result.Message);
+                return View(model); // Hata varsa, view'u model ile birlikte tekrar render et
             }
 
             TempData["SuccessMessage"] = result.Message;
-            return RedirectToAction("ProfileDetail", "Member");
+            return RedirectToAction("Profile", "Member");
         }
 
-        [HttpGet]
-        public async Task<IActionResult> ProfileDetail()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                TempData["ErrorMessage"] = "Kullanıcı bulunamadı. Lütfen tekrar giriş yapın.";
-                return RedirectToAction("Login", "Home");
-            }
-
-            // Kullanıcının profil detaylarını veritabanından al
-            var userProfile = await _context.UserProfileDetailsTable.FirstOrDefaultAsync(x => x.UserId == user.Id);
-
-            // Eğer kayıt yoksa, yeni bir boş model oluştur
-            if (userProfile == null)
-            {
-                userProfile = new ApplicationUserProfileDetails
-                {
-                    UserId = user.Id
-                };
-            }
-
-            return View(userProfile); // 📌 Doğru model gönderildi
-        }
         [HttpGet]
         public IActionResult Payment()
         {
             return View();
         }
-
-        [HttpGet]
-        public IActionResult Profile()
-        {
-            return View();
-        }
-
     }
-
 }
-

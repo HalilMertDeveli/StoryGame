@@ -4,12 +4,16 @@ namespace MurderGame.Dtos.UserDtos
 {
     public class UserProfileDto
     {
+        // Kullanıcı adı (DisplayName) - zorunlu
         public string DisplayName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string? Bio { get; set; }
-        public string? ProfilePicture { get; set; }
+
+        // Doğum tarihi (DateOfBirth) - zorunlu
         public DateTime DateOfBirth { get; set; }
+
+        // Konum (Location) - isteğe bağlı, maksimum 100 karakter
         public string? Location { get; set; }
+
+        // Telefon numarası (PhoneNumber) - zorunlu ve belirli formata uygun olmalı
+        public string PhoneNumber { get; set; }
     }
 }

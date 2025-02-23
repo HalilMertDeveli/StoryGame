@@ -12,8 +12,8 @@ using MurderGame.DataAccess.Context;
 namespace MurderGame.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250216155934_InitialCreate4")]
-    partial class InitialCreate4
+    [Migration("20250223134429_AddPhoneNumberColumn")]
+    partial class AddPhoneNumberColumn
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -332,6 +332,10 @@ namespace MurderGame.DataAccess.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfilePicture")

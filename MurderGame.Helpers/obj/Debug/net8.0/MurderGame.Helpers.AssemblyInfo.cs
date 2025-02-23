@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MurderGame.Helpers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c466f39f8bc55d26458ea3d01e4a5ce460a5e92e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09dee602ca4755ec95425a9a372d6ed9c3f5d57a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MurderGame.Helpers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MurderGame.Helpers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

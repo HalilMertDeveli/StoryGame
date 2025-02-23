@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BVzK9SZ7HUurZp9PkCfQ+5Ve7LfK9bQOsXKAnRYEiV4=",
+  "Hash": "3+QHfQ5wNiuLUXDKRtuzc7dXvZdrydaDHJPm8dE8Kes=",
   "Source": "MurderGame.UI",
   "BasePath": "_content/MurderGame.UI",
   "Mode": "Default",
@@ -178,8 +178,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dojlgv1s59",
-      "Integrity": "3VJKIMyNnaArVNUsRy0DrygXAWRFBZ+XUHL8VrbIDsg=",
+      "Fingerprint": "1ugw669jiq",
+      "Integrity": "OQuxHF9R/1gHYvIAY4Cz36rJCn7855fPnEUOCKrD260=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Member\\Profile.css"
@@ -2172,6 +2172,51 @@
       ]
     },
     {
+      "Route": "css/Member/Profile.1ugw669jiq.css",
+      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Member\\Profile.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2867"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OQuxHF9R/1gHYvIAY4Cz36rJCn7855fPnEUOCKrD260=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Feb 2025 14:24:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1ugw669jiq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Member/Profile.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-OQuxHF9R/1gHYvIAY4Cz36rJCn7855fPnEUOCKrD260="
+        }
+      ]
+    },
+    {
       "Route": "css/Member/Profile.css",
       "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Member\\Profile.css",
       "Selectors": [],
@@ -2182,7 +2227,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2351"
+          "Value": "2867"
         },
         {
           "Name": "Content-Type",
@@ -2190,11 +2235,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3VJKIMyNnaArVNUsRy0DrygXAWRFBZ+XUHL8VrbIDsg=\""
+          "Value": "\"OQuxHF9R/1gHYvIAY4Cz36rJCn7855fPnEUOCKrD260=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 18:32:07 GMT"
+          "Value": "Fri, 21 Feb 2025 14:24:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2204,52 +2249,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3VJKIMyNnaArVNUsRy0DrygXAWRFBZ+XUHL8VrbIDsg="
-        }
-      ]
-    },
-    {
-      "Route": "css/Member/Profile.dojlgv1s59.css",
-      "AssetFile": "C:\\Users\\halil\\source\\repos\\murder_game_asp\\MurderGame\\MurderGame\\wwwroot\\css\\Member\\Profile.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2351"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"3VJKIMyNnaArVNUsRy0DrygXAWRFBZ+XUHL8VrbIDsg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 18:32:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dojlgv1s59"
-        },
-        {
-          "Name": "label",
-          "Value": "css/Member/Profile.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-3VJKIMyNnaArVNUsRy0DrygXAWRFBZ+XUHL8VrbIDsg="
+          "Value": "sha256-OQuxHF9R/1gHYvIAY4Cz36rJCn7855fPnEUOCKrD260="
         }
       ]
     },
@@ -8344,7 +8344,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 16 Feb 2025 16:09:47 GMT"
+          "Value": "Sun, 23 Feb 2025 13:39:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8381,7 +8381,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 16 Feb 2025 16:09:47 GMT"
+          "Value": "Sun, 23 Feb 2025 13:39:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8426,7 +8426,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 16 Feb 2025 16:09:47 GMT"
+          "Value": "Sun, 23 Feb 2025 13:39:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8471,7 +8471,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 16 Feb 2025 16:09:47 GMT"
+          "Value": "Sun, 23 Feb 2025 13:39:36 GMT"
         },
         {
           "Name": "Cache-Control",

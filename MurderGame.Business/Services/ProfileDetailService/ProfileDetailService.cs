@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using MurderGame.DataAccess.Context;
 using MurderGame.Dtos.UserDtos;
 using MurderGame.Entities.Domains;
-using MurderGame.Entities.Domains.MurderGame.Entities.Domains;
 using FluentValidation;
 using FluentValidation.Results;
+using MurderGame.Entities.Domains.MurderGame.Entities.Domains;
 
 namespace MurderGame.Business.Services
 {
@@ -25,11 +26,11 @@ namespace MurderGame.Business.Services
 
         public async Task<(bool Success, string Message)> HandleProfileUpdateAsync(UserProfileDto model, ApplicationUser user)
         {
-            // FluentValidation ile gelen modeli doğrula
+            // FluentValidation ile modeli doğrula
             ValidationResult validationResult = _validator.Validate(model);
-
             if (!validationResult.IsValid)
             {
+                // Hata mesajlarını birleştir ve döndür
                 string errorMessage = string.Join(" ", validationResult.Errors.Select(e => e.ErrorMessage));
                 return (false, errorMessage);
             }
@@ -39,15 +40,14 @@ namespace MurderGame.Business.Services
 
             if (existingProfile == null)
             {
-                // Eğer profil yoksa yeni bir kayıt oluştur
+                // Profil yoksa yeni kayıt oluştur
                 var userProfile = new ApplicationUserProfileDetails
                 {
                     UserId = user.Id,
                     DisplayName = model.DisplayName,
-                    ProfilePicture = model.ProfilePicture,
-                    Bio = model.Bio,
                     DateOfBirth = model.DateOfBirth,
                     Location = model.Location,
+                    PhoneNumber = model.PhoneNumber,
                     CreatedAt = DateTime.UtcNow
                 };
 
@@ -55,12 +55,11 @@ namespace MurderGame.Business.Services
             }
             else
             {
-                // Eğer profil zaten varsa güncelleme işlemi yap
+                // Profil varsa güncelleme yap
                 existingProfile.DisplayName = model.DisplayName;
-                existingProfile.ProfilePicture = model.ProfilePicture;
-                existingProfile.Bio = model.Bio;
                 existingProfile.DateOfBirth = model.DateOfBirth;
                 existingProfile.Location = model.Location;
+                existingProfile.PhoneNumber = model.PhoneNumber;
                 existingProfile.UpdatedAt = DateTime.UtcNow;
             }
 
@@ -69,4 +68,3 @@ namespace MurderGame.Business.Services
         }
     }
 }
-

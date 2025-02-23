@@ -20,6 +20,7 @@ namespace MurderGame.Entities.Domains
             public string? Location { get; set; }
             public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
             public DateTime? UpdatedAt { get; set; }
+            public string PhoneNumber { get; set; } = null!;
 
             // Navigation Property
             public ApplicationUser ApplicationUser { get; set; } 

@@ -1,69 +1,104 @@
-﻿<html>
+﻿@model MurderGame.Dtos.UserDtos.UserProfileDto
+@{
+    ViewData["Title"] = "Profil Detayları";
+}
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-    <link href="~/css/member/profile.css" rel="stylesheet" asp-append-version="true" />
-    <script src="~/js/member/profile.js" asp-append-version="true"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profil detaylarını güncelleyin.">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/member/profile.css" asp-append-version="true" />
 </head>
 <body>
-</body>
-</html>
-<div class="container card-0 justify-content-center ">
-    <div class="card-body px-sm-4 px-0">
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-10 col"><h3 class="font-weight-bold ml-md-0 mx-auto text-center text-sm-left"> Teklif Talep Et </h3><p class="mt-md-4  ml-md-0 ml-2 text-center text-sm-left"> Yüksek profesyonellik ile, pikselle kusursuz web ve mobil uygulama geliştirme, üçüncü taraf entegrasyonu ve çözümler sunuyoruz.</p></div>
-        </div>
-        <div class="row justify-content-center round">
-            <div class="col-lg-10 col-md-12 ">
-                <div class="card shadow-lg card-1">
-                    <div class="card-body inner-card">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-5 col-md-6 col-sm-12">
-                                <div class="form-group"><label for="first-name">Ad</label><input type="text" class="form-control" id="first-name" placeholder="Adınızı yazın"> </div>
-                                <div class="form-group"> <label for="Mobile-Number">Telefon Numarası</label> <input type="text" class="form-control" id="Mobile-Number" placeholder=""> </div>
-                                <div class="form-group"> <label for="inputEmail4">Proje Türü</label> <select class="form-control"><option>Web Tasarım</option><option>Blockchain</option> <option>Makine Öğrenimi</option></select> </div>
-                                <div class="form-group"> <label for="time">Proje İçin Maksimum Süre</label> <input type="text" class="form-control" id="time" placeholder="">  </div>
-                                <div class="form-group"><label for="skill">Gerekli Beceriler</label> <input type="text" class="form-control" id="skill" placeholder=""> </div>
-                            </div>
-                            <div class="col-lg-5 col-md-6 col-sm-12">
-                                <div class="form-group"> <label for="last-name">Soyad</label> <input type="text" class="form-control" id="last-name" placeholder=""> </div>
-                                <div class="form-group"> <label for="phone">E-posta</label>  <input type="email" class="form-control" id="email" placeholder=""> </div>
-                                <div class="form-group"> <label for="Evaluate Budget">Bütçeyi Değerlendirin</label> <input type="text" class="form-control" id="Evaluate Budget" placeholder=""> </div>
-                                <div class="form-group"> <label for="Company-Name">Şirket Adı</label> <input type="text" class="form-control" id="Company-Name" placeholder=""> </div>
-                                <div class="form-group">
-                                    <label for="inputEmail4">Ülke</label> <select class="form-control">
-                                        <option>Türkiye</option>
-                                        <option>Amerika Birleşik Devletleri</option>
-                                        <option>Almanya</option>
-                                        <option>Fransa</option>
-                                        <option>İngiltere</option>
-                                        <option>İtalya</option>
-                                        <option>İspanya</option>
-                                        <option>Kanada</option>
-                                        <option>Çin</option>
-                                        <option>Hindistan</option>
-                                        <option>Japonya</option>
-                                        <option>Rusya</option>
-                                        <option>Avustralya</option>
-                                        <option>Brezilya</option>
-                                        <option>Güney Kore</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+    <div class="animated-background"></div>
 
-                        <div class="row justify-content-center">
-                            <div class="col-md-12 col-lg-10 col-12"> <div class="form-group files"><label class="my-auto">Dosyanızı Yükleyin </label> <input id="file" type="file" class="form-control" /></div></div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-12 col-lg-10 col-12">
-                                <div class="form-group"> <label for="exampleFormControlTextarea2">Mesaj</label> <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="5"></textarea></div>
-                                <div class="row justify-content-end mb-5">
-                                    <div class="col-lg-4 col-auto "><button type="button" class="btn btn-primary btn-block"><small class="font-weight-bold">Teklif Talep Et</small></button> </div>
-                                </div>
+    <section>
+        <div class="container card-0 justify-content-center mt-5">
+            <div class="card-body px-sm-4 px-0">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-10 col">
+                        <h3 class="font-weight-bold ml-md-0 mx-auto text-center text-sm-left">Profil Bilgilerini Güncelle</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center round">
+                    <div class="col-lg-10 col-md-12">
+                        <div class="card shadow-lg card-1">
+                            <div class="card-body inner-card">
+                                <!-- Başarı ve hata mesajlarını görüntüleme -->
+                                @if (TempData["SuccessMessage"] != null)
+                                {
+                                    <div class="alert alert-success">
+                                        @TempData["SuccessMessage"]
+                                    </div>
+                                }
+                                @if (TempData["ErrorMessage"] != null)
+                                {
+                                    <div class="alert alert-danger">
+                                        @TempData["ErrorMessage"]
+                                    </div>
+                                }
+                                <form asp-controller="Member" asp-action="Profile" method="post">
+                                    <!-- Model bazlı validasyon özetini göster -->
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="row justify-content-center">
+                                        <!-- Sol sütun: DisplayName -->
+                                        <div class="col-lg-5 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label asp-for="DisplayName">Görünen Ad</label>
+                                                <input asp-for="DisplayName" class="form-control" placeholder="Görünen Adınızı yazın" />
+                                                <span asp-validation-for="DisplayName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Sağ sütun: DateOfBirth ve Location -->
+                                        <div class="col-lg-5 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label asp-for="DateOfBirth">Doğum Tarihi</label>
+                                                <input asp-for="DateOfBirth" type="date" class="form-control" />
+                                                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="Location">Konum</label>
+                                                <input asp-for="Location" class="form-control" placeholder="Konumunuzu girin" />
+                                                <span asp-validation-for="Location" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Alt satırda: PhoneNumber -->
+                                        <div class="col-lg-10 col-md-12">
+                                            <div class="form-group">
+                                                <label asp-for="PhoneNumber">Telefon Numarası</label>
+                                                <input asp-for="PhoneNumber" class="form-control" placeholder="Telefon Numaranızı giriniz" />
+                                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-4 col-auto d-flex justify-content-center">
+                                            <button type="submit" class="btn btn-primary btn-block">
+                                                <small class="font-weight-bold">Güncelle</small>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+
+    <!-- Client-side validasyon için gerekli scriptler -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>
